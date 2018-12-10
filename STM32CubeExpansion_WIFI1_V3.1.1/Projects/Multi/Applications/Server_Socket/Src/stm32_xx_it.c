@@ -41,6 +41,7 @@
 #include "wifi_module.h"
 #include "stm32_spwf_wifi.h"
 #include "wifi_globals.h"
+#include "ntp.h"
     
 /** @defgroup STM32xx_IT_Private_Variables
 * @{
@@ -233,7 +234,18 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandleArg)
 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    Wifi_TIM_Handler(htim);
+	if (htim->Instance==TIM4)
+	{
+		// NTP Case
+		// Inc the counter
+		if(ntps.secsSince1900>0)
+		{
+			ntps.secsSince1900++;
+		}
+	}
+	{
+		Wifi_TIM_Handler(htim);
+	}
 }
 
 /**

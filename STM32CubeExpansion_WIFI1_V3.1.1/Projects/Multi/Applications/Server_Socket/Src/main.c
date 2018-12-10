@@ -92,6 +92,72 @@ char wifi_ip_addr[20];
 uint16_t len;
 uint32_t baud_rate = 115200;
 
+static TIM_HandleTypeDef s_TimerInstance = { 
+    .Instance = TIM4
+};
+
+
+
+
+
+
+
+/*
+		START TIMER SECTION
+*/
+
+
+
+void TIM4_IRQHandler()
+{
+    HAL_TIM_IRQHandler(&s_TimerInstance);
+}
+
+
+/*
+*	Called to init timer preferences
+*/
+void InitializeTimer()
+{
+    __TIM4_CLK_ENABLE();
+    s_TimerInstance.Init.Prescaler = SystemCoreClock/10000 - 1;
+    s_TimerInstance.Init.CounterMode = TIM_COUNTERMODE_UP;
+    s_TimerInstance.Init.Period = 10000;
+    s_TimerInstance.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+    s_TimerInstance.Init.RepetitionCounter = 0;
+    HAL_TIM_Base_Init(&s_TimerInstance);
+		HAL_TIM_Base_Start_IT(&s_TimerInstance);
+		HAL_NVIC_SetPriority(TIM4_IRQn, 0, 0);
+    
+}
+
+/*
+ * Start the timer ticking
+ */
+void StartTimer()
+{
+	
+  HAL_NVIC_EnableIRQ(TIM4_IRQn);
+}
+
+
+/*
+ * Stop the timer ticking
+ */
+void StopTimer()
+{
+	HAL_NVIC_DisableIRQ(TIM4_IRQn);
+}
+
+
+
+/*
+		END TIMER SECTION
+*/
+
+
+
+
  /**
   * @brief  Main program
   * @param  None
@@ -116,6 +182,8 @@ int main(void)
 
   /* configure the timers  */
   Timer_Config( );
+	
+	
   
 #ifdef USART_PRINT_MSG
   UART_Msg_Gpio_Init();
@@ -123,6 +191,10 @@ int main(void)
   Set_UartMsgHandle(&UART_MsgHandle);
 #endif  
   
+	
+	/* Configure NTP Timer */
+	InitializeTimer();
+	
   /*status = wifi_get_AP_settings();
   if(status!=WiFi_MODULE_SUCCESS)
   {
@@ -157,6 +229,9 @@ int main(void)
 	// Initializing ntp state machine to reset
 	ntp_state = ntp_state_reset;
   
+	
+	int timerValue = 0;
+	
   while (1)
   {
     switch (wifi_state) 
@@ -311,19 +386,20 @@ int main(void)
 					}
 					break;
 				case ntp_state_error:
-					//TODO Implement
+					StopTimer();
+					printf("\r\n >>NTP Error, Reseting the procedure..");
+					ntp_state = ntp_state_reset;
 					break;
-				case ntp_state_idle:
-					//TODO Implement
-					printf(".");
-					fflush(stdout);
-					HAL_Delay(500);
+				case ntp_state_idle:					
+					HAL_Delay(1);
 					break;
 				case ntp_undefine_state:
 					break;
 			}
       break;
-
+			
+			// Check aux devices Connection State Machine
+			
     default:
       break;
     }    
@@ -671,9 +747,11 @@ void ind_wifi_socket_data_received(int8_t callback_server_id, int8_t socket_id, 
 		
 		time = time -  NTP_SEVENTY_YEARS;
 		printf("\r\nNTP Data Receive: %lu \r\n",(unsigned long)time);
-		ntp_state = ntp_state_idle;
+		//ntp_state = ntp_state_idle;
 		// Close now the socket, just 1 answer
-		wifi_socket_client_close(socket_id);
+		//wifi_socket_client_close(socket_id);
+		// Start the incrementer timer
+		StartTimer();
 	}
 	else
 	{
@@ -742,6 +820,9 @@ void ind_wifi_error(WiFi_Status_t error_code)
     printf("\r\n WiFi Command Failed. \r\n User should now press the RESET Button(B2). \r\n");
   }
 }
+
+
+
 
 /**
   * @}
