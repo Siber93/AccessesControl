@@ -1,27 +1,4 @@
-/*
- *
- *  NTP Client on STM32-E407 with ChibiOs
- *
- *  Copyright (c) 2015 by Jean-Michel Gallego
- *
- *  Please read file ReadMe.txt for instructions
- *
- *  This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
- 
- 
- #include <stdint.h>
+#include <stdint.h>
  
  
 
@@ -45,13 +22,13 @@
 #define NTP_DELAY_SYNCHRO               10
 
 // Delay in minutes between retries when failure
-#define NTP_DELAY_FAILURE               2
+#define NTP_DELAY_FAILURE               3
 
 // Number of seconds between January 1900 and January 1970 (Unix time)
 #define NTP_SEVENTY_YEARS               2208988800UL
 
 // Clock speed * number of seconds
-#define NTP_ANSWER_WAIT_TIME            84000000 * 3
+#define NTP_ANSWER_WAIT_TIME            84000000 * NTP_DELAY_FAILURE
 
 #define NTP_PACKET_SIZE                 48
 

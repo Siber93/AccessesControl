@@ -444,6 +444,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\Src\ntp.c</FilePath>
             </File>
+            <File>
+              <FileName>device_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Src\device_manager.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1231,6 +1236,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\Src\ntp.c</FilePath>
             </File>
+            <File>
+              <FileName>device_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Src\device_manager.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2017,6 +2027,11 @@
               <FileName>ntp.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Src\ntp.c</FilePath>
+            </File>
+            <File>
+              <FileName>device_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Src\device_manager.c</FilePath>
             </File>
           </Files>
         </Group>

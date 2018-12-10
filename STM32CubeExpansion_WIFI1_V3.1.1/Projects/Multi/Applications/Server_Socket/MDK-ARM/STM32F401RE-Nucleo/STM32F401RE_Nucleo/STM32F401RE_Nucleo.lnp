@@ -8,6 +8,7 @@
 ".\stm32f401re_nucleo\console.o"
 ".\stm32f401re_nucleo\stm32_xx_hal_msp.o"
 ".\stm32f401re_nucleo\ntp.o"
+".\stm32f401re_nucleo\device_manager.o"
 ".\stm32f401re_nucleo\stm32f4xx_hal.o"
 ".\stm32f401re_nucleo\stm32f4xx_hal_adc.o"
 ".\stm32f401re_nucleo\stm32f4xx_hal_adc_ex.o"
