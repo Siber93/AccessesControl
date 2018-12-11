@@ -449,6 +449,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\Src\device_manager.c</FilePath>
             </File>
+            <File>
+              <FileName>file_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Src\file_manager.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1241,6 +1246,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\Src\device_manager.c</FilePath>
             </File>
+            <File>
+              <FileName>file_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Src\file_manager.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2032,6 +2042,11 @@
               <FileName>device_manager.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Src\device_manager.c</FilePath>
+            </File>
+            <File>
+              <FileName>file_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Src\file_manager.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -69,16 +69,19 @@ void DM_Kernel(dsm_state_t state)
 	switch(state)
 	{
 		case dsm_state_reset:
+			printf("\r\n >>Opening Command socket...");
 			// Open socket for commands
 			status = wifi_socket_server_open(COMMAND_PORT, (uint8_t *)protocolC, &dms.command_socket);
 			// Prepare to send multicast discovery			
 			state = dsm_state_send_multicast;
 			break;
 		case dsm_state_send_multicast:
+			printf("\r\n >>Send Discovery");
 			// Send Multicast
 			SendDiscovery();
 			state = dsm_state_discovering;
 			dms.discovery_tmstmp = ntps.secsSince1900;
+			printf("\r\n >>Waiting for the answer\r\n");
 			break;
 		case dsm_state_discovering:
 			if(dms.d1_state && dms.d2_state)  // <-- Implementare l'attivazione di questi flag (quando si connettono nuovi dispositivi via tcp ed inviano un packetto con scritto chi sono)
@@ -105,6 +108,44 @@ void DM_Kernel(dsm_state_t state)
 		case dsm_state_error:
 			break;
 		default:
+			break;
+	}
+}
+
+/*
+ * Check if the pkt is from our protocol
+*/
+uint8_t DM_CheckCommand(uint8_t* data, uint8_t len)
+{
+	return data[0] == 0xFE && data[0] == 0xFF ? 1 : 0;
+}
+
+
+/*
+ * Check if the pkt is from our protocol
+*/
+void DM_ParseCommand(uint8_t* data, uint8_t len)
+{
+	switch(data[2])
+	{
+		case 0x00:
+			break;
+		case 0x01:
+			// Discovery Ack
+			if(data[3] == 0)
+			{
+				dms.d1_state = 1;
+			}
+			if(data[3] == 1)
+			{
+				dms.d2_state = 1;
+			}
+			break;
+		case 0x02:
+			// Notify
+			break;
+		default:
+			// Not Supported
 			break;
 	}
 }

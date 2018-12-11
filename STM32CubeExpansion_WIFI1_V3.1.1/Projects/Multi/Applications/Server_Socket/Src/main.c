@@ -42,6 +42,7 @@
 #include "wifi_globals.h"
 #include "wifi_interface.h"
 #include "ntp.h"
+#include "device_manager.h"
 
 /** @defgroup WIFI_Examples
   * @{
@@ -70,6 +71,7 @@ wifi_config config;
 UART_HandleTypeDef UART_MsgHandle;
 
 ntp_state_t ntp_state;
+dsm_state_t dsm_state;
 
 uint8_t console_input[1], console_count=0;
 char console_ssid[40];
@@ -399,7 +401,7 @@ int main(void)
       break;
 			
 			// Check aux devices Connection State Machine
-			
+			DM_Kernel(dsm_state);
     default:
       break;
     }    
@@ -740,6 +742,7 @@ WiFi_Status_t wifi_get_AP_settings(void)
 
 void ind_wifi_socket_data_received(int8_t callback_server_id, int8_t socket_id, uint8_t * data_ptr, uint32_t message_size, uint32_t chunk_size, WiFi_Socket_t socket_type)
 {
+	
 	if(socket_id == ntps.server_id)
 	{
 		// NTP Response
@@ -752,24 +755,34 @@ void ind_wifi_socket_data_received(int8_t callback_server_id, int8_t socket_id, 
 		//wifi_socket_client_close(socket_id);
 		// Start the incrementer timer
 		StartTimer();
+		return;
 	}
-	else
+	// If not NTP check if the client is accepted
+	if(socket_id != dms.command_socket
+		|| !DM_CheckCommand(data_ptr,len))
 	{
-		if(socket_id == server_id)
-		{
-			// Command response
-			printf("\r\nData Receive Callback...\r\n");
-			memcpy(echo, data_ptr, 50);
-			printf((const char*)echo);
-			printf("\r\nsocket ID: %d\r\n",socket_id);
-			printf("msg size: %lu\r\n",(unsigned long)message_size);
-			printf("chunk size: %lu\r\n",(unsigned long)chunk_size);
-			fflush(stdout);
-			sock_id = socket_id;//client_ID from where message has arrived
-			server_id = callback_server_id;//server_ID from where message has arrived
-			wifi_state = wifi_state_socket_write;
-		}
-	}
+		// Discart the pkt		
+		return;
+	}	
+	
+	// Pkt is valid
+	DM_ParseCommand(data_ptr,len);
+	
+	
+	/*if(socket_id == server_id)
+	{
+		// Command response
+		printf("\r\nData Receive Callback...\r\n");
+		memcpy(echo, data_ptr, 50);
+		printf((const char*)echo);
+		printf("\r\nsocket ID: %d\r\n",socket_id);
+		printf("msg size: %lu\r\n",(unsigned long)message_size);
+		printf("chunk size: %lu\r\n",(unsigned long)chunk_size);
+		fflush(stdout);
+		sock_id = socket_id;//client_ID from where message has arrived
+		server_id = callback_server_id;//server_ID from where message has arrived
+		wifi_state = wifi_state_socket_write;
+	}*/
 	
   
 }
