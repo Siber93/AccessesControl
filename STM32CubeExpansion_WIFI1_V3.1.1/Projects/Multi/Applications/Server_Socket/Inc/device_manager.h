@@ -29,6 +29,7 @@ struct dm_stru
 	uint8_t   			discovery_socket;
 	uint8_t   			command_socket;
 	uint32_t				discovery_tmstmp;
+	uint16_t				people;
 };
 
 extern struct dm_stru dms;
@@ -39,3 +40,4 @@ extern struct dm_stru dms;
 uint8_t DM_CheckCommand(unsigned char* data, uint8_t len);
 void DM_ParseCommand(uint8_t* data, uint8_t len);
 void DM_Kernel(dsm_state_t state);
+void DM_Init(char* ip, int len);

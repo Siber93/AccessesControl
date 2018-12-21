@@ -273,6 +273,10 @@ int main(void)
         status = wifi_get_MAC_address((uint8_t*)wifi_ip_addr);
         printf("\r\n>>mac addr is %s\r\n", wifi_ip_addr);
         
+			
+				// Init Device manager
+				DM_Init(wifi_ip_addr,strlen(wifi_ip_addr));
+				// Go to the next state
         wifi_state = wifi_state_connected_idle;
       break;
 

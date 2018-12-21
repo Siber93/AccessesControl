@@ -2,7 +2,7 @@
 #include <string.h>
 #include "wifi_interface.h"
 #include "ntp.h"
-
+#include "file_manager.h"
 
 
 struct dm_stru dms;
@@ -24,7 +24,7 @@ void DM_Init(char* ip, int len)
 	dms.addr_len = len;
 	dms.d1_state = 0;
 	dms.d2_state = 0;
-	
+	dms.people = 0;
 }
 
 
@@ -88,6 +88,8 @@ void DM_Kernel(dsm_state_t state)
 			{
 				// Devices found
 				state = dsm_state_ready;
+				printf("\r\n >>Devices Connected");
+				printf("\r\n >>System Ready");
 			}
 			else
 			{
@@ -135,17 +137,40 @@ void DM_ParseCommand(uint8_t* data, uint8_t len)
 			if(data[3] == 0)
 			{
 				dms.d1_state = 1;
+				printf("\r\n >>D_ACK 1 Received");
 			}
 			if(data[3] == 1)
 			{
 				dms.d2_state = 1;
+				printf("\r\n >>D_ACK 2 Received");				
 			}
 			break;
 		case 0x02:
 			// Notify
+			// parse notify type
+			switch(data[4])
+			{
+				case 0x01:
+					// Entry
+					dms.people += data[5];
+					printf("\r\n >>[N] %lu - %d Entries - %lu",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS), data[5],(unsigned long)dms.people);
+					break;
+				case 0x02:
+					// Leaving
+					dms.people -= data[5];
+					printf("\r\n >>[N] %lu - %d Leavings - %lu",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS), data[5],(unsigned long)dms.people);
+					break;
+				default:
+					// Error
+					printf("\r\n >>[N] %lu - Error, Unknown PKT",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS));
+					break;
+			}		
+			// Print log			
+			FM_AddValue(dms.people);
 			break;
 		default:
 			// Not Supported
+			printf("\r\n >>[UKNW_CMD]");
 			break;
 	}
 }
