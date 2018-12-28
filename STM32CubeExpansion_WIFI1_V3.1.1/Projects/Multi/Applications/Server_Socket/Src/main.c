@@ -91,6 +91,7 @@ char * gcfg_key1 = "ip_ipaddr";
 char * gcfg_key2 = "nv_model";
 uint8_t socket_id;
 char wifi_ip_addr[20];
+char wifi_mac_addr[20];
 uint16_t len;
 uint32_t baud_rate = 115200;
 
@@ -98,7 +99,7 @@ static TIM_HandleTypeDef s_TimerInstance = {
     .Instance = TIM4
 };
 
-
+GPIO_InitTypeDef GPIO_InitStruct;
 
 
 
@@ -133,12 +134,24 @@ void InitializeTimer()
     
 }
 
+
+/**
+		INIT PIR GPIO [PA_8]
+*/
+void init_pir(void)
+{	
+	/*Configure GPIO PA_8 as input pin*/
+	GPIO_InitStruct.Pin = GPIO_PIN_8;
+	GPIO_InitStruct.Mode = GPIO_MODE_EVT_RISING;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct); 
+}
+
 /*
  * Start the timer ticking
  */
 void StartTimer()
-{
-	
+{	
   HAL_NVIC_EnableIRQ(TIM4_IRQn);
 }
 
@@ -175,7 +188,6 @@ int main(void)
 			INIT PERIFERICHE
 	*/
 	
-	
   __GPIOA_CLK_ENABLE();
   HAL_Init();
 
@@ -185,7 +197,8 @@ int main(void)
   /* configure the timers  */
   Timer_Config( );
 	
-	
+	/* Configure PIR GPIO */
+	//init_pir();
   
 #ifdef USART_PRINT_MSG
   UART_Msg_Gpio_Init();
@@ -231,6 +244,8 @@ int main(void)
 	// Initializing ntp state machine to reset
 	ntp_state = ntp_state_reset;
   
+	// Initializing DM state machine to reset
+	dsm_state = dsm_state_reset;
 	
 	int timerValue = 0;
 	
@@ -268,10 +283,10 @@ int main(void)
         status = wifi_get_IP_address((uint8_t*)wifi_ip_addr);
         printf("\r\n>>IP address is %s\r\n", wifi_ip_addr);
         
-        memset(wifi_ip_addr, 0x00, 20);
+        memset(wifi_mac_addr, 0x00, 20);
         
-        status = wifi_get_MAC_address((uint8_t*)wifi_ip_addr);
-        printf("\r\n>>mac addr is %s\r\n", wifi_ip_addr);
+        status = wifi_get_MAC_address((uint8_t*)wifi_mac_addr);
+        printf("\r\n>>mac addr is %s\r\n", wifi_mac_addr);
         
 			
 				// Init Device manager
@@ -397,15 +412,15 @@ int main(void)
 					ntp_state = ntp_state_reset;
 					break;
 				case ntp_state_idle:					
-					HAL_Delay(1);
+					// Check aux devices Connection State Machine
+					DM_Kernel(&dsm_state);
 					break;
 				case ntp_undefine_state:
 					break;
 			}
-      break;
 			
-			// Check aux devices Connection State Machine
-			DM_Kernel(dsm_state);
+			break;
+			
     default:
       break;
     }    
@@ -756,7 +771,10 @@ void ind_wifi_socket_data_received(int8_t callback_server_id, int8_t socket_id, 
 		printf("\r\nNTP Data Receive: %lu \r\n",(unsigned long)time);
 		//ntp_state = ntp_state_idle;
 		// Close now the socket, just 1 answer
-		//wifi_socket_client_close(socket_id);
+		/*if(wifi_socket_client_close(ntps.server_id) == WiFi_MODULE_SUCCESS)
+		{
+			ntps.server_id = 255;
+		}*/
 		// Start the incrementer timer
 		StartTimer();
 		return;
@@ -837,7 +855,6 @@ void ind_wifi_error(WiFi_Status_t error_code)
     printf("\r\n WiFi Command Failed. \r\n User should now press the RESET Button(B2). \r\n");
   }
 }
-
 
 
 
