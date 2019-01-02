@@ -16,6 +16,9 @@ char *protocolD = "u";
 // Protocol for commands (tcp)
 char *protocolC = "t";
 
+// Manage the thread concurrency on commands resolving 
+uint8_t cmd_resolver_lock = 0;
+
 WiFi_Status_t status;
 
 /*
@@ -97,7 +100,7 @@ void DM_Kernel(dsm_state_t* dsm_st)
 				return;
 			}			
 			
-			printf("\r\n >>Opening Discovery socket...");
+			/*printf("\r\n >>Opening Discovery socket...");
 			// Open the socket for discovery
 			status =	wifi_socket_client_open((uint8_t *)DISCOVERY_ADDRESS, DISCOVERY_PORT, (uint8_t *)protocolD, &dms.discovery_socket);
 			if(status!=WiFi_MODULE_SUCCESS)
@@ -105,12 +108,16 @@ void DM_Kernel(dsm_state_t* dsm_st)
 				printf("\r\n >>Error in DSC socket opening");
 				
 				return;
-			}
+			}*/
 			
 			// Prepare to send multicast discovery			
-			*dsm_st = dsm_state_send_multicast;
+			//*dsm_st = dsm_state_send_multicast;
+			
+			
+			// Set to ready state
+			*dsm_st = dsm_state_ready;
 			break;
-		case dsm_state_send_multicast:
+		/*case dsm_state_send_multicast:
 			printf("\r\n >>Send Discovery");
 			// Send Multicast
 			SendDiscovery();
@@ -127,12 +134,13 @@ void DM_Kernel(dsm_state_t* dsm_st)
 			else
 			{
 				// Keep waiting
-				HAL_Delay(1000);
+				HAL_Delay(1 000);
 				printf(".");
 			}	
-			break;
+			break;*/
 		case dsm_state_ready:
-			// Not used yet. Maybe settable after retries limit reached.
+			// Check if it's necesary to write the file on sd card
+			FM_Check_WTimeout();
 			break;
 		case dsm_state_error:
 			break;
@@ -173,27 +181,34 @@ void DM_ParseCommand(uint8_t* data, uint8_t len)
 			}
 			break;
 		case 0x02:
-			// Notify
-			// parse notify type
-			switch(data[4])
+			if(!cmd_resolver_lock)
 			{
-				case 0x01:
-					// Entry
-					dms.people += data[5];
-					printf("\r\n >>[N] %lu - %d Entries - %lu",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS), data[5],(unsigned long)dms.people);
-					break;
-				case 0x02:
-					// Leaving
-					dms.people -= data[5];
-					printf("\r\n >>[N] %lu - %d Leavings - %lu",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS), data[5],(unsigned long)dms.people);
-					break;
-				default:
-					// Error
-					printf("\r\n >>[N] %lu - Error, Unknown PKT",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS));
-					break;
-			}		
-			// Print log			
-			FM_AddValue(dms.people);
+				// Take the lock
+				cmd_resolver_lock++;
+				// Notify
+				// parse notify type
+				switch(data[4])
+				{
+					case 0x01:
+						// Entry
+						dms.people += data[5];
+						printf("\r\n >>[N] %lu - %d Entries - %lu",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS), data[5],(unsigned long)dms.people);
+						break;
+					case 0x02:
+						// Leaving
+						dms.people -= data[5];
+						printf("\r\n >>[N] %lu - %d Leavings - %lu",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS), data[5],(unsigned long)dms.people);
+						break;
+					default:
+						// Error
+						printf("\r\n >>[N] %lu - Error, Unknown PKT",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS));
+						break;
+				}		
+				// Print log			
+				FM_AddValue(dms.people);
+				// Release the lock
+				cmd_resolver_lock--;
+			}
 			break;
 		default:
 			// Not Supported

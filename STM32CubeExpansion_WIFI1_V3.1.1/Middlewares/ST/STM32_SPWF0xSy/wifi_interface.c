@@ -2861,6 +2861,75 @@ uint32_t wifi_get_status_variable_value(uint8_t *status_variable_name, uint8_t *
   return cfg_value_length;
 }
 
+
+
+
+#if SPWF04  
+/**
+* @brief  wifi_set_mdns_properties
+*         Set value for MDNS register inside IDWF04 the value of any status variable.
+* @param  domain  			: name of the MDNS Domain. 
+* @param  service 			: name of the MDNS Service. 
+* @param  service_prot  : protocol supported by MDNS Service. 
+* @param  service_port 	: port open for the MDNS Service.
+* @param  key					  : key name of record dns. 
+* @param  val					 	: value for key of record dns.
+* @retval uint32_t : If successful, the total number of charcters written in user buffer is returned, else zero is returned.
+* @NOTE:  The user should make sure to allocate enough memory to the buffer pointed by char* parameters.
+*/
+WiFi_Status_t wifi_set_mdns_properties(char* domain, char* service, char* service_prot, char* service_port, char* key, char* val)
+{
+	WiFi_Status_t status = WiFi_MODULE_SUCCESS;	
+	
+	/* Set domain_name : AT+S.SCFG=ip_mdns_domain_name,service*/ 		
+  status = SET_Configuration_Addr(WIFI_IP_MDNS_DOMAIN_NAME, domain);
+  if(status != WiFi_MODULE_SUCCESS)
+    return WiFi_CONFIG_ERROR;  
+	
+	/* Set service_name : AT+S.SCFG=ip_mdns_services_name,service*/ 		
+  status = SET_Configuration_Addr(WIFI_IP_MDNS_SERVICES_NAME, service);
+  if(status != WiFi_MODULE_SUCCESS)
+    return WiFi_CONFIG_ERROR;	
+	
+	/* Set service_prot : AT+S.SCFG=ip_mdns_services_prot,service*/ 		
+  status = SET_Configuration_Addr(WIFI_IP_MDNS_SERVICES_PROT, service_prot);
+  if(status != WiFi_MODULE_SUCCESS)
+    return WiFi_CONFIG_ERROR;	
+	
+	/* Set service_port : AT+S.SCFG=ip_mdns_services_port,service*/ 		
+  status = SET_Configuration_Addr(WIFI_IP_MDNS_SERVICES_PORT, service_port);
+  if(status != WiFi_MODULE_SUCCESS)
+    return WiFi_CONFIG_ERROR;	
+	
+	/* Set service_ttl (refresh time) : AT+S.SCFG=ip_mdns_services_ttl,service*/ 		
+  status = SET_Configuration_Addr(WIFI_IP_MDNS_SERVICES_TTL, "120");
+  if(status != WiFi_MODULE_SUCCESS)
+    return WiFi_CONFIG_ERROR;
+	
+	/* Set key value : AT+S.SCFG=ip_mdns_services_keys,service*/ 		
+  status = SET_Configuration_Addr(WIFI_IP_MDNS_SERVICES_KEYS, key);
+  if(status != WiFi_MODULE_SUCCESS)
+    return WiFi_CONFIG_ERROR;	
+	
+	
+	/* Set vals value : AT+S.SCFG=ip_mdns_services_vals,service*/ 		
+  status = SET_Configuration_Addr(WIFI_IP_MDNS_SERVICES_VALS, val);
+  if(status != WiFi_MODULE_SUCCESS)
+    return WiFi_CONFIG_ERROR;
+	
+	
+	//while(IO_status_flag.AT_Response_Received != WIFI_TRUE);//Till Hardware Started arrives
+	
+	/* Save the settings on the flash memory : AT&W*/ 
+  //Save_Current_Setting();
+	
+	
+	return WiFi_MODULE_SUCCESS;
+	
+}
+
+#endif
+
 /**
   * @}
   */ 

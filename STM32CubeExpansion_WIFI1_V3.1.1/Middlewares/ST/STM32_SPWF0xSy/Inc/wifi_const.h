@@ -225,6 +225,16 @@
 #define WIFI_IBSS_IP_MASK                       "255.255.255.0"
 #define WIFI_IP_USE_DHCP                        0
 
+#define WIFI_IP_MDNS_DOMAIN_NAME								"ip_mdns_domain_name"
+#define WIFI_IP_MDNS_SERVICES_NAME							"ip_mdns_services_name"
+#define WIFI_IP_MDNS_SERVICES_PROT							"ip_mdns_services_prot"
+#define WIFI_IP_MDNS_SERVICES_PORT							"ip_mdns_services_port"
+#define WIFI_IP_MDNS_SERVICES_KEYS							"ip_mdns_services_keys"
+#define WIFI_IP_MDNS_SERVICES_VALS							"ip_mdns_services_vals"
+#define WIFI_IP_MDNS_SERVICES_TTL								"ip_mdns_services_ttl"
+#define WIFI_IP_MDNS_STARTUP										"ip_mdns_startup"
+
+
 /**
   * @}
   */

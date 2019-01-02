@@ -123,8 +123,8 @@ I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h)(0x5
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo\stm32f4xx_nucleo.h)(0x5C0D6B9F)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C28A793)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\event_buffer.h)(0x5C0D6BA1)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x574EA096)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x574EA096)
@@ -132,8 +132,8 @@ I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\ring_buffer.h)(0x5C0D6B
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\spwf04WiFi.h)(0x5C0D6BA1)
 I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x574EA096)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\wifi_globals.h)(0x5C0D6BA1)
-F (..\..\Src\main.c)(0x5C263AC0)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32f4xx\Include -I ..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo -I ..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc -I ..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1 -I ..\..\..\..\..\..\Drivers\CMSIS\Include -I ..\..\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils --C99-IC:\Users\Simone\Documents\GitHub\AccessesControl\STM32CubeExpansion_WIFI1_V3.1.1\Projects\Multi\Applications\Server_Socket\MDK-ARM\STM32F401RE-Nucleo\RTE-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Device\Include-D__UVISION_VERSION="521" -DSTM32F401xE -DUSE_HAL_DRIVER -DSTM32F401xE -DUSE_STM32F4XX_NUCLEO -DUSART_PRINT_MSG -DSPWF04 -DCONSOLE_UART_ENABLED-o .\stm32f401re_nucleo\main.o --omf_browse .\stm32f401re_nucleo\main.crf --depend .\stm32f401re_nucleo\main.d)
-I (..\..\Inc\main.h)(0x5C0D6BA1)
+F (..\..\Src\main.c)(0x5C2B5886)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32f4xx\Include -I ..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo -I ..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc -I ..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1 -I ..\..\..\..\..\..\Drivers\CMSIS\Include -I ..\..\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils --C99-IC:\Users\Simone\Documents\GitHub\AccessesControl\STM32CubeExpansion_WIFI1_V3.1.1\Projects\Multi\Applications\Server_Socket\MDK-ARM\STM32F401RE-Nucleo\RTE-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Device\Include-D__UVISION_VERSION="521" -DSTM32F401xE -DUSE_HAL_DRIVER -DSTM32F401xE -DUSE_STM32F4XX_NUCLEO -DUSART_PRINT_MSG -DSPWF04 -DCONSOLE_UART_ENABLED-o .\stm32f401re_nucleo\main.o --omf_browse .\stm32f401re_nucleo\main.crf --depend .\stm32f401re_nucleo\main.d)
+I (..\..\Inc\main.h)(0x5C289E3C)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C0D6BA1)
 I (..\..\Inc\stm32f4xx_hal_conf.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C0D6BA1)
@@ -178,8 +178,8 @@ I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_module.h)(0x5C0D6BA1
 I (..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1\stm32_spwf_wifi.h)(0x5C0D6B9F)
 I (..\..\Inc\wifi_conf.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C28A793)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\event_buffer.h)(0x5C0D6BA1)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x574EA096)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\ring_buffer.h)(0x5C0D6BA1)
@@ -187,7 +187,8 @@ I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\spwf04WiFi.h)(0x5C0D6BA
 I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x574EA096)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\wifi_globals.h)(0x5C0D6BA1)
 I (..\..\Inc\ntp.h)(0x5C0EA4F8)
-I (..\..\Inc\device_manager.h)(0x5C2623A5)
+I (..\..\Inc\device_manager.h)(0x5C289EA5)
+I (..\..\Inc\file_manager.h)(0x5C1D1233)
 F (..\..\Src\stm32_xx_it.c)(0x5C0EA4F9)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32f4xx\Include -I ..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo -I ..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc -I ..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1 -I ..\..\..\..\..\..\Drivers\CMSIS\Include -I ..\..\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils --C99-IC:\Users\Simone\Documents\GitHub\AccessesControl\STM32CubeExpansion_WIFI1_V3.1.1\Projects\Multi\Applications\Server_Socket\MDK-ARM\STM32F401RE-Nucleo\RTE-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Device\Include-D__UVISION_VERSION="521" -DSTM32F401xE -DUSE_HAL_DRIVER -DSTM32F401xE -DUSE_STM32F4XX_NUCLEO -DUSART_PRINT_MSG -DSPWF04 -DCONSOLE_UART_ENABLED-o .\stm32f401re_nucleo\stm32_xx_it.o --omf_browse .\stm32f401re_nucleo\stm32_xx_it.crf --depend .\stm32f401re_nucleo\stm32_xx_it.d)
 I (..\..\Inc\stm32_xx_it.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_module.h)(0x5C0D6BA1)
@@ -233,8 +234,8 @@ I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h)(0x5
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo\stm32f4xx_nucleo.h)(0x5C0D6B9F)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C28A793)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\event_buffer.h)(0x5C0D6BA1)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x574EA096)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x574EA096)
@@ -284,7 +285,7 @@ I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_spdifrx.h)(0
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h)(0x5C0D6BA1)
 F (..\..\Src\stm32_xx_hal_msp.c)(0x5C0D6BA2)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32f4xx\Include -I ..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo -I ..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc -I ..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1 -I ..\..\..\..\..\..\Drivers\CMSIS\Include -I ..\..\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils --C99-IC:\Users\Simone\Documents\GitHub\AccessesControl\STM32CubeExpansion_WIFI1_V3.1.1\Projects\Multi\Applications\Server_Socket\MDK-ARM\STM32F401RE-Nucleo\RTE-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Device\Include-D__UVISION_VERSION="521" -DSTM32F401xE -DUSE_HAL_DRIVER -DSTM32F401xE -DUSE_STM32F4XX_NUCLEO -DUSART_PRINT_MSG -DSPWF04 -DCONSOLE_UART_ENABLED-o .\stm32f401re_nucleo\stm32_xx_hal_msp.o --omf_browse .\stm32f401re_nucleo\stm32_xx_hal_msp.crf --depend .\stm32f401re_nucleo\stm32_xx_hal_msp.d)
-I (..\..\Inc\main.h)(0x5C0D6BA1)
+I (..\..\Inc\main.h)(0x5C289E3C)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C0D6BA1)
 I (..\..\Inc\stm32f4xx_hal_conf.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x5C0D6BA1)
@@ -328,8 +329,8 @@ I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_module.h)(0x5C0D6BA1
 I (..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1\stm32_spwf_wifi.h)(0x5C0D6B9F)
 I (..\..\Inc\wifi_conf.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C28A793)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\event_buffer.h)(0x5C0D6BA1)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x574EA096)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x574EA096)
@@ -340,7 +341,7 @@ I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\wifi_globals.h)(0x5C0D6
 F (..\..\Src\ntp.c)(0x5C0D6BA2)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32f4xx\Include -I ..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo -I ..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc -I ..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1 -I ..\..\..\..\..\..\Drivers\CMSIS\Include -I ..\..\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils --C99-IC:\Users\Simone\Documents\GitHub\AccessesControl\STM32CubeExpansion_WIFI1_V3.1.1\Projects\Multi\Applications\Server_Socket\MDK-ARM\STM32F401RE-Nucleo\RTE-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Device\Include-D__UVISION_VERSION="521" -DSTM32F401xE -DUSE_HAL_DRIVER -DSTM32F401xE -DUSE_STM32F4XX_NUCLEO -DUSART_PRINT_MSG -DSPWF04 -DCONSOLE_UART_ENABLED-o .\stm32f401re_nucleo\ntp.o --omf_browse .\stm32f401re_nucleo\ntp.crf --depend .\stm32f401re_nucleo\ntp.d)
 I (..\..\Inc\ntp.h)(0x5C0EA4F8)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574EA096)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1\stm32_spwf_wifi.h)(0x5C0D6B9F)
 I (..\..\Inc\wifi_conf.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C0D6BA1)
@@ -386,9 +387,9 @@ I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x574EA096)
 F (..\..\Src\device_manager.c)(0x5C263DD2)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32f4xx\Include -I ..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo -I ..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc -I ..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1 -I ..\..\..\..\..\..\Drivers\CMSIS\Include -I ..\..\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils --C99-IC:\Users\Simone\Documents\GitHub\AccessesControl\STM32CubeExpansion_WIFI1_V3.1.1\Projects\Multi\Applications\Server_Socket\MDK-ARM\STM32F401RE-Nucleo\RTE-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Device\Include-D__UVISION_VERSION="521" -DSTM32F401xE -DUSE_HAL_DRIVER -DSTM32F401xE -DUSE_STM32F4XX_NUCLEO -DUSART_PRINT_MSG -DSPWF04 -DCONSOLE_UART_ENABLED-o .\stm32f401re_nucleo\device_manager.o --omf_browse .\stm32f401re_nucleo\device_manager.crf --depend .\stm32f401re_nucleo\device_manager.d)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x574EA096)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x574EA096)
-I (..\..\Inc\device_manager.h)(0x5C2623A5)
+I (..\..\Inc\device_manager.h)(0x5C289EA5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574EA096)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1\stm32_spwf_wifi.h)(0x5C0D6B9F)
 I (..\..\Inc\wifi_conf.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C0D6BA1)
@@ -432,10 +433,10 @@ I (..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo\stm32f4xx_nucleo.h)(0x5C0D6B9F
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h)(0x5C0D6BA1)
 I (..\..\Inc\ntp.h)(0x5C0EA4F8)
 I (..\..\Inc\file_manager.h)(0x5C1D1233)
-F (..\..\Src\file_manager.c)(0x5C1D1214)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32f4xx\Include -I ..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo -I ..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc -I ..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1 -I ..\..\..\..\..\..\Drivers\CMSIS\Include -I ..\..\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils --C99-IC:\Users\Simone\Documents\GitHub\AccessesControl\STM32CubeExpansion_WIFI1_V3.1.1\Projects\Multi\Applications\Server_Socket\MDK-ARM\STM32F401RE-Nucleo\RTE-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Device\Include-D__UVISION_VERSION="521" -DSTM32F401xE -DUSE_HAL_DRIVER -DSTM32F401xE -DUSE_STM32F4XX_NUCLEO -DUSART_PRINT_MSG -DSPWF04 -DCONSOLE_UART_ENABLED-o .\stm32f401re_nucleo\file_manager.o --omf_browse .\stm32f401re_nucleo\file_manager.crf --depend .\stm32f401re_nucleo\file_manager.d)
+F (..\..\Src\file_manager.c)(0x5C2B5BEB)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32f4xx\Include -I ..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo -I ..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc -I ..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1 -I ..\..\..\..\..\..\Drivers\CMSIS\Include -I ..\..\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils --C99-IC:\Users\Simone\Documents\GitHub\AccessesControl\STM32CubeExpansion_WIFI1_V3.1.1\Projects\Multi\Applications\Server_Socket\MDK-ARM\STM32F401RE-Nucleo\RTE-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Device\Include-D__UVISION_VERSION="521" -DSTM32F401xE -DUSE_HAL_DRIVER -DSTM32F401xE -DUSE_STM32F4XX_NUCLEO -DUSART_PRINT_MSG -DSPWF04 -DCONSOLE_UART_ENABLED-o .\stm32f401re_nucleo\file_manager.o --omf_browse .\stm32f401re_nucleo\file_manager.crf --depend .\stm32f401re_nucleo\file_manager.d)
 I (..\..\Inc\file_manager.h)(0x5C1D1233)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574EA096)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1\stm32_spwf_wifi.h)(0x5C0D6B9F)
 I (..\..\Inc\wifi_conf.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x5C0D6BA1)
@@ -2702,7 +2703,7 @@ I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_fmpi2c.h)(0x
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_spdifrx.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h)(0x5C0D6BA1)
-F (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\wifi_interface.c)(0x5C0D6BA1)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32f4xx\Include -I ..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo -I ..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc -I ..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1 -I ..\..\..\..\..\..\Drivers\CMSIS\Include -I ..\..\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils --C99-IC:\Users\Simone\Documents\GitHub\AccessesControl\STM32CubeExpansion_WIFI1_V3.1.1\Projects\Multi\Applications\Server_Socket\MDK-ARM\STM32F401RE-Nucleo\RTE-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Device\Include-D__UVISION_VERSION="521" -DSTM32F401xE -DUSE_HAL_DRIVER -DSTM32F401xE -DUSE_STM32F4XX_NUCLEO -DUSART_PRINT_MSG -DSPWF04 -DCONSOLE_UART_ENABLED-o .\stm32f401re_nucleo\wifi_interface.o --omf_browse .\stm32f401re_nucleo\wifi_interface.crf --depend .\stm32f401re_nucleo\wifi_interface.d)
+F (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\wifi_interface.c)(0x5C28AEAE)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32f4xx\Include -I ..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo -I ..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc -I ..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1 -I ..\..\..\..\..\..\Drivers\CMSIS\Include -I ..\..\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils --C99-IC:\Users\Simone\Documents\GitHub\AccessesControl\STM32CubeExpansion_WIFI1_V3.1.1\Projects\Multi\Applications\Server_Socket\MDK-ARM\STM32F401RE-Nucleo\RTE-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Device\Include-D__UVISION_VERSION="521" -DSTM32F401xE -DUSE_HAL_DRIVER -DSTM32F401xE -DUSE_STM32F4XX_NUCLEO -DUSART_PRINT_MSG -DSPWF04 -DCONSOLE_UART_ENABLED-o .\stm32f401re_nucleo\wifi_interface.o --omf_browse .\stm32f401re_nucleo\wifi_interface.crf --depend .\stm32f401re_nucleo\wifi_interface.d)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_module.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1\stm32_spwf_wifi.h)(0x5C0D6B9F)
 I (..\..\Inc\wifi_conf.h)(0x5C0D6BA1)
@@ -2746,8 +2747,8 @@ I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h)(0x5
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo\stm32f4xx_nucleo.h)(0x5C0D6B9F)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C28A793)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\event_buffer.h)(0x5C0D6BA1)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x574EA096)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x574EA096)
@@ -2800,8 +2801,8 @@ I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h)(0x5
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo\stm32f4xx_nucleo.h)(0x5C0D6B9F)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C28A793)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\event_buffer.h)(0x5C0D6BA1)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x574EA096)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x574EA096)
@@ -2853,8 +2854,8 @@ I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h)(0x5
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo\stm32f4xx_nucleo.h)(0x5C0D6B9F)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C28A793)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\event_buffer.h)(0x5C0D6BA1)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x574EA096)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x574EA096)
@@ -2907,8 +2908,8 @@ I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h)(0x5
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo\stm32f4xx_nucleo.h)(0x5C0D6B9F)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C28A793)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\event_buffer.h)(0x5C0D6BA1)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x574EA096)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x574EA096)
@@ -2960,8 +2961,8 @@ I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h)(0x5
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo\stm32f4xx_nucleo.h)(0x5C0D6B9F)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C28A793)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\event_buffer.h)(0x5C0D6BA1)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x574EA096)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x574EA096)
@@ -2971,7 +2972,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x574EA096)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\wifi_globals.h)(0x5C0D6BA1)
 F (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\wifi_globals.c)(0x5C0D6BA1)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\..\..\..\..\..\Drivers\CMSIS\Device\ST\STM32f4xx\Include -I ..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo -I ..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc -I ..\..\..\..\..\..\Drivers\BSP\X-NUCLEO-IDW0xx1 -I ..\..\..\..\..\..\Drivers\CMSIS\Include -I ..\..\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc -I ..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils --C99-IC:\Users\Simone\Documents\GitHub\AccessesControl\STM32CubeExpansion_WIFI1_V3.1.1\Projects\Multi\Applications\Server_Socket\MDK-ARM\STM32F401RE-Nucleo\RTE-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Device\Include-D__UVISION_VERSION="521" -DSTM32F401xE -DUSE_HAL_DRIVER -DSTM32F401xE -DUSE_STM32F4XX_NUCLEO -DUSART_PRINT_MSG -DSPWF04 -DCONSOLE_UART_ENABLED-o .\stm32f401re_nucleo\wifi_globals.o --omf_browse .\stm32f401re_nucleo\wifi_globals.crf --depend .\stm32f401re_nucleo\wifi_globals.d)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\wifi_globals.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C28A793)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\event_buffer.h)(0x5C0D6BA1)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x574EA096)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x574EA096)
@@ -3018,7 +3019,7 @@ I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h)(0x5
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo\stm32f4xx_nucleo.h)(0x5C0D6B9F)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\ring_buffer.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\spwf04WiFi.h)(0x5C0D6BA1)
 I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x574EA096)
@@ -3069,8 +3070,8 @@ I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h)(0x5
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo\stm32f4xx_nucleo.h)(0x5C0D6B9F)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C28A793)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\event_buffer.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\ring_buffer.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\spwf04WiFi.h)(0x5C0D6BA1)
@@ -3123,8 +3124,8 @@ I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h)(0x5
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo\stm32f4xx_nucleo.h)(0x5C0D6B9F)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C28A793)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\event_buffer.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\spwf04WiFi.h)(0x5C0D6BA1)
 I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x574EA096)
@@ -3176,8 +3177,8 @@ I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h)(0x5
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Drivers\BSP\STM32f4xx-Nucleo\stm32f4xx_nucleo.h)(0x5C0D6B9F)
 I (..\..\..\..\..\..\Drivers\STM32f4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C0D6BA1)
-I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C0D6BA1)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_const.h)(0x5C28A793)
+I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Inc\wifi_interface.h)(0x5C28AE67)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\ring_buffer.h)(0x5C0D6BA1)
 I (..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\Utils\spwf04WiFi.h)(0x5C0D6BA1)
 I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x574EA096)

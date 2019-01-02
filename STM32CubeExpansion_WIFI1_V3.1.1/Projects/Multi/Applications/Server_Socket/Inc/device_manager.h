@@ -1,6 +1,5 @@
 #include <stdint.h>
 
-
 #define DISCOVERY_PKT_SIZE											18
 #define DISCOVERY_PORT													123
 #define COMMAND_PORT														124
@@ -9,6 +8,7 @@
 #define DISCOVERY_SEQ1_BYTE											(char)0xFE
 #define DISCOVERY_SEQ2_BYTE											(char)0xFF
 #define MAX_DEVICE_NUMBER												10
+
 
 
 typedef enum {

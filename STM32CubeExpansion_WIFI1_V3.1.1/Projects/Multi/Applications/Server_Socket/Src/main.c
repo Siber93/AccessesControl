@@ -43,6 +43,7 @@
 #include "wifi_interface.h"
 #include "ntp.h"
 #include "device_manager.h"
+#include "file_manager.h"
 
 /** @defgroup WIFI_Examples
   * @{
@@ -53,6 +54,13 @@
   */
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
+#define MDNS_DOMAIN																		"UNIBO"
+#define MDNS_SERVICE																	"AccessControl"
+#define MDNS_SERVICE_PROT															"_custom._tcp"
+#define MDNS_SERVICE_PORT															"124"
+#define MDNS_SERVICE_KEY															"board_fw_ver"
+#define MDNS_SERVICE_VAL															"1.0"
+
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
   
@@ -229,17 +237,32 @@ int main(void)
 
   UART_Configuration(baud_rate); 
 
-  printf("\r\nInitializing the wifi module...\r\n");
+  printf("\r\nInitializing the wifi module...");
 
   /* Init the wi-fi module */  
   status = wifi_init(&config);
   if(status!=WiFi_MODULE_SUCCESS)
   {
-    printf("Error in Config");
+    printf("\r\n  >>Error in Config\r\n");
     return 0;
   }
   
-  printf("\r\nInitializing complete.\r\n");
+  printf("\r\n  >>Initializing complete.\r\n");
+	
+	
+	printf("\r\nInitializing MDNS properties...");
+	status = wifi_set_mdns_properties(MDNS_DOMAIN,MDNS_SERVICE,MDNS_SERVICE_PROT,MDNS_SERVICE_PORT, MDNS_SERVICE_KEY, MDNS_SERVICE_VAL);
+	if(status!=WiFi_MODULE_SUCCESS)
+  {
+    printf("\r\n  >>Error in Config\r\n");
+    return 0;
+  }
+  
+  printf("\r\n  >>Initializing complete.\r\n");
+	
+	
+	printf("\r\nMain state machine started.");
+	
 	
 	// Initializing ntp state machine to reset
 	ntp_state = ntp_state_reset;
@@ -257,14 +280,8 @@ int main(void)
       break;
 
       case wifi_state_ready:
-
-        //printf("\r\n >>setting up miniAP mode...\r\n");
-        
-        //wifi_ap_start((uint8_t *)console_ssid, console_psk, channel_num, mode);  <--- Set Module as AP
-			
-			
-			
-				printf("\r\n >>Conntecting to ");
+		
+				printf("\r\n  >>[WIFI] Conntecting to ");
 				printf(ssid);
 				printf("...\r\n");
         wifi_connect(ssid,seckey, mode);  //  <--- Connecting to the network
@@ -276,17 +293,17 @@ int main(void)
 				/*
 						WiFi CONNECTION ESTABLISHED
 				*/
-        printf("\r\n >>connected...\r\n");      
+        printf("\r\n  >>[WIFI] Connected.");      
         
         WiFi_Status_t status;
         
         status = wifi_get_IP_address((uint8_t*)wifi_ip_addr);
-        printf("\r\n>>IP address is %s\r\n", wifi_ip_addr);
+        printf("\r\n>>    IP address is %s", wifi_ip_addr);
         
         memset(wifi_mac_addr, 0x00, 20);
         
         status = wifi_get_MAC_address((uint8_t*)wifi_mac_addr);
-        printf("\r\n>>mac addr is %s\r\n", wifi_mac_addr);
+        printf("\r\n>>    Mac address is %s\r\n", wifi_mac_addr);
         
 			
 				// Init Device manager
@@ -296,45 +313,9 @@ int main(void)
       break;
 
       case wifi_state_disconnected:
-        printf("\r\n >>disconnected..\r\n");
+        printf("\r\n  >>[WIFI] Disconnected..\r\n");
         wifi_state = wifi_state_idle;
       break;
-
-      case wifi_state_socket:
-      printf("\r\n >>WiFi server socket opening..\r\n");
-
-      /* Read Write Socket data */        
-      #ifdef SPWF04
-        status = wifi_socket_server_open(portnumber, (uint8_t *)protocol, &server_id);
-      #else
-        status = wifi_socket_server_open(portnumber, (uint8_t *)protocol);
-      #endif
-      if(status == WiFi_MODULE_SUCCESS)
-      {
-        printf("\r\n >>Server Socket Open OK \r\n");          
-      }
-        wifi_state = wifi_state_idle;
-
-      break;
-
-    case wifi_state_socket_write:
-        printf("\r\n >>Writing data to client\r\n");
-
-        len = strlen(echo);
-
-        /* Read Write Socket data */        
-        #ifdef SPWF04
-          status = wifi_socket_server_write(server_id, sock_id, len, echo);
-        #else
-          status = wifi_socket_server_write(len, echo);
-        #endif
-        if(status == WiFi_MODULE_SUCCESS)
-        {
-          printf("\r\n >>Server Socket Write OK \r\n");  
-        }
-        wifi_state = wifi_state_idle;
-
-        break;
 
     case wifi_state_idle:
 			// Check for connection		
@@ -348,7 +329,7 @@ int main(void)
       switch(ntp_state)
 			{
 				case ntp_state_reset:
-					printf("\r\n >>Init NTP Request");
+					printf("\r\n  >>[NTP] Init NTP Request");
 					//Reset Variable
 					ntps.addr = NULL;
 					ntps.server_list_index = 0;							
@@ -359,7 +340,7 @@ int main(void)
 					ntp_state = ntp_state_send;					
 					break;				
 				case ntp_state_send:
-					printf("\r\n >>Sending NTP Request to server #%d\r\n",ntps.server_list_index);		
+					printf("\r\n  >>[NTP] Sending NTP Request to server #%d\r\n",ntps.server_list_index);		
 					// Send the NTP request
 					ntpRequest();
 						
@@ -378,10 +359,10 @@ int main(void)
 						// Check if the waiting time has been expired
 						if(ntps.retries_counter == NTP_SERVER_MAX_RETRIES)
 						{
-							printf("\r\n >>No NTP Response, move forward..");
+							printf("\r\n   >>No NTP Response, move forward..");
 							if(ntps.server_list_index + 1 == NTP_SERVER_NUM)
 							{
-								printf("\r\n >>NTP Error, No other servers aviable");
+								printf("\r\n   >>NTP Error, No other servers aviable.");
 								// Error, no one server is reachable
 								ntp_state = ntp_state_error;
 							}
@@ -408,10 +389,12 @@ int main(void)
 					break;
 				case ntp_state_error:
 					StopTimer();
-					printf("\r\n >>NTP Error, Reseting the procedure..");
+					printf("\r\n  >>[NTP] NTP Error, Reseting the procedure..");
 					ntp_state = ntp_state_reset;
 					break;
-				case ntp_state_idle:					
+				case ntp_state_idle:
+					if(!timerValue++)
+						FM_AddValue(100);
 					// Check aux devices Connection State Machine
 					DM_Kernel(&dsm_state);
 					break;

@@ -337,6 +337,12 @@ WiFi_Status_t   wifi_file_create(char *FileName, uint16_t length, char *UserFile
 WiFi_Status_t   wifi_file_image_create(uint8_t * HostName,uint8_t * FileName, uint32_t port_number);
 WiFi_Status_t   wifi_file_print_content(uint8_t * FileName);
 
+
+
+/****** Utility Functions *******/
+WiFi_Status_t wifi_set_mdns_properties(char* domain, char* service, char* service_prot, char* service_port, char* key, char* val);
+
+
 #if 0
 WiFi_Status_t   wifi_file_print_content(uint8_t *FileName, int16_t offset, int16_t length);
 #endif

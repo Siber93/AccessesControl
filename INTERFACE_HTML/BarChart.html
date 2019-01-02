@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Bar Chart</title>
+	<script async="" src="Bar%20Chart_files/analytics.js"></script><script src="Bar%20Chart_files/Chart.js"></script><style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+	<script src="Bar%20Chart_files/utils.js"></script>
+	
+	
+	<!-- LIBS FOR DATE PICKER -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<!-- /LIBS FOR DATE PICKER -->
+	<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+</head>
+
+<body>
+	<input type="text" name="datetimes" style="width: 200px;"/>
+	<div id="container" style="width: 75%;"><div style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;" class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+		<canvas id="canvas" style="display: block; width: 1013px; height: 506px;" width="1013" height="506" class="chartjs-render-monitor"></canvas>
+	</div>
+	<button id="randomizeData">Randomize Data</button>
+	<button id="addDataset">Add Dataset</button>
+	<button id="removeDataset">Remove Dataset</button>
+	<button id="addData">Add Data</button>
+	<button id="removeData">Remove Data</button>
+	<script>
+		var barChartData;
+		var start = 15;
+		var end =45;
+		var intervalNumber = 10;
+
+		
+		window.onload = function(e){ 
+			$.ajax({
+				url : "db_index.txt",
+				dataType: "text",
+				success : function (data) {
+					var stringArray = data.split(',');			
+					
+					var interval = (end-start) /intervalNumber;				
+					
+					// Trovo i limiti superiore ed inferiore tra i nomi dei file
+					var edgeDown = 0;
+					var edgeUp = stringArray.length-1;
+					for (var i = 0; i < stringArray.length; i++) {
+						var val = parseInt(stringArray[i].replace(".json",""));
+						if(val> start)
+						{
+							edgeDown = Math.max(i-1,0);
+							break;						
+						}
+					}
+					
+					for (var i = edgeDown; i < stringArray.length; i++) {
+						var val = parseInt(stringArray[i].replace(".json",""));
+						if(val> end)
+						{
+							edgeUp = i;
+							break;						
+						}
+					}	
+
+
+						
+					
+					// Aprire tutti i file citati e mergiare gli array in uno unico
+					var mergedArray = [];
+					for (var i = edgeDown; i <= edgeUp; i++) {
+						$.ajax({
+							url : stringArray[i],
+							dataType: "text",
+							async: false,
+							success : function (data) {
+								var myObjs = JSON.parse(data);
+								for(var j = 0; j < myObjs.length; j++)
+								{
+									mergedArray.push(myObjs[j]);
+								}							
+							}
+						});
+					}
+					
+					
+					
+					// Ricalcolare edgeUp and edgeDown su nuovo array completo
+					for (var i = 0; i < mergedArray.length; i++) {
+						var val = parseInt(mergedArray[i].time);
+						if(val> start)
+						{
+							edgeDown = Math.max(i-1,0);
+							break;						
+						}
+					}
+					
+					for (var i = edgeDown; i < mergedArray.length; i++) {
+						var val = parseInt(mergedArray[i].time);
+						if(val> end)
+						{
+							edgeUp = i;
+							break;						
+						}
+					}
+					
+					// Creare un nuovo array con in posizione 0 il valore di edgeDown ed in posizione N il valore di edgeUp
+					
+					var mergedFinalArray = mergedArray.slice(edgeDown,edgeUp);
+					mergedFinalArray[0].time = start+"";
+					mergedFinalArray[mergedFinalArray.length-1].time = end+"";
+					
+					
+					// Creare array di pesi per le medie
+					var weights = []
+					var counter = 0;
+					var index = 1;
+					for (var j = 0; j < mergedFinalArray.length-1; j++) {
+						var val = parseInt(mergedFinalArray[j].time);
+						var valNext = parseInt(mergedFinalArray[j+1].time);
+						if(val >= start + interval*index)
+						{
+							index++;
+						}
+						var deltaI = ((start + interval*index))-val;
+						var deltaN = valNext - val;
+						
+						weights.push(Math.min(deltaI,deltaN)/interval);
+					}
+					
+					
+					// Creare array con medie pesate
+					var mergedAvgFinalArray = [];
+					index = 1;
+					var obj1 = {time : (start + Math.round(interval/2))+ "", value : 0};
+					mergedAvgFinalArray.push(obj1);
+					for (var j = 0; j < mergedFinalArray.length-1; j++) {
+						var val = parseInt(mergedFinalArray[j].time);
+						if(val >= start + interval*index)
+						{
+							index++;
+							var prevEdge = start + interval*(index-1)
+							var objN = {time : (prevEdge + Math.round(interval/2))+ "", value : 0};
+							mergedAvgFinalArray.push(objN);
+							if(j > 0)
+							{
+								// Caso in cui il dato non parte esattamente dall'inizio dell'intervallo
+								var valPrev = parseInt(mergedFinalArray[j-1].time);							
+								if(val>prevEdge)
+								{
+									mergedAvgFinalArray[index-1].value += mergedFinalArray[j-1].value*(val-prevEdge)/interval;
+								}			
+							}					
+							
+						}
+						mergedAvgFinalArray[index-1].value += mergedFinalArray[j].value*weights[j];
+					}
+					
+					var labels = [];
+					var data = [];
+					for(var i = 0; i < mergedAvgFinalArray.length; i++)
+					{
+						labels.push(mergedAvgFinalArray[i].time);
+						data.push(mergedAvgFinalArray[i].value);
+					}
+					
+					barChartData = {
+						labels: labels,
+						datasets: [{
+							label: 'Persone nel Laboratorio',
+							backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+							borderColor: window.chartColors.red,
+							borderWidth: 1,
+							data: data
+						}]
+
+					};
+					
+					draw();
+				}
+			});
+		}	
+		
+		
+		$(function() {
+		  $('input[name="datetimes"]').daterangepicker({
+			timePicker: true,
+			startDate: moment().startOf('hour'),
+			endDate: moment().startOf('hour').add(32, 'hour'),
+			locale: {
+			  format: 'M/DD hh:mm A'
+			}
+		  });
+		});
+		
+		var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		var color = Chart.helpers.color;
+		
+
+		function draw() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myBar = new Chart(ctx, {
+				type: 'bar',
+				data: barChartData,
+				options: {
+					responsive: true,
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'Chart.js Bar Chart'
+					}
+				}
+			});
+
+		};
+
+		document.getElementById('randomizeData').addEventListener('click', function() {
+			var zero = Math.random() < 0.2 ? true : false;
+			barChartData.datasets.forEach(function(dataset) {
+				dataset.data = dataset.data.map(function() {
+					return zero ? 0.0 : randomScalingFactor();
+				});
+
+			});
+			window.myBar.update();
+		});
+
+		var colorNames = Object.keys(window.chartColors);
+		document.getElementById('addDataset').addEventListener('click', function() {
+			var colorName = colorNames[barChartData.datasets.length % colorNames.length];
+			var dsColor = window.chartColors[colorName];
+			var newDataset = {
+				label: 'Dataset ' + (barChartData.datasets.length + 1),
+				backgroundColor: color(dsColor).alpha(0.5).rgbString(),
+				borderColor: dsColor,
+				borderWidth: 1,
+				data: []
+			};
+
+			for (var index = 0; index < barChartData.labels.length; ++index) {
+				newDataset.data.push(randomScalingFactor());
+			}
+
+			barChartData.datasets.push(newDataset);
+			window.myBar.update();
+		});
+
+		document.getElementById('addData').addEventListener('click', function() {
+			if (barChartData.datasets.length > 0) {
+				var month = MONTHS[barChartData.labels.length % MONTHS.length];
+				barChartData.labels.push(month);
+
+				for (var index = 0; index < barChartData.datasets.length; ++index) {
+					// window.myBar.addData(randomScalingFactor(), index);
+					barChartData.datasets[index].data.push(randomScalingFactor());
+				}
+
+				window.myBar.update();
+			}
+		});
+
+		document.getElementById('removeDataset').addEventListener('click', function() {
+			barChartData.datasets.pop();
+			window.myBar.update();
+		});
+
+		document.getElementById('removeData').addEventListener('click', function() {
+			barChartData.labels.splice(-1, 1); // remove the label first
+
+			barChartData.datasets.forEach(function(dataset) {
+				dataset.data.pop();
+			});
+
+			window.myBar.update();
+		});
+	</script>
+
+
+
+</body></html>

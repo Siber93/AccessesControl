@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\STM32F401RE_Nucleo\STM32F401RE_Nucleo.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\STM32F401RE_Nucleo\STM32F401RE_Nucleo.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Fri Dec 28 16:14:28 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Tue Jan 01 13:24:15 2019
 <BR><P>
 <H3>Maximum Stack Usage =        576 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -111,7 +111,7 @@ Global Symbols
 <P><STRONG><a name="[45]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xe.o(.text)
 </UL>
-<P><STRONG><a name="[137]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[136]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[52]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -121,15 +121,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[138]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[137]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[139]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[138]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[13a]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[139]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[13b]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[13a]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[13c]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[13b]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[1]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_stm32f401xe.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xe.o(RESET)
@@ -277,61 +277,61 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xe.o(RESET)
 </UL>
 <P><STRONG><a name="[0]"></a>fflush</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, fflush.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_ap_client_left
-<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_ap_client_joined
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_socket_server_client_left
-<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_socket_server_client_joined
+<BR><BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_ap_client_left
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_ap_client_joined
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_socket_server_client_left
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_socket_server_client_joined
 </UL>
 
 <P><STRONG><a name="[d4]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_MAC_address
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_IP_address
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
-<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_End_of_Buffer_Reached
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer_Messages
 </UL>
 
-<P><STRONG><a name="[13d]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[13c]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
-<P><STRONG><a name="[13e]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[13d]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
 <P><STRONG><a name="[55]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FM_Init
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_WiFi_Counter_Variables
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_WiFi_Counter_Variables
 </UL>
 
-<P><STRONG><a name="[13f]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[13e]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[140]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[13f]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[54]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_MAC_address
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_IP_address
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_DMA_Buffer
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_WiFi_Counter_Variables
-<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;unused_data_handling
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_End_of_Buffer_Reached
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer_Messages
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Check_for_Extra_Bytes
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_WiFi_Counter_Variables
 </UL>
 
 <P><STRONG><a name="[db]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendDiscovery
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpClient
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpClient
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer_Messages
 </UL>
 
-<P><STRONG><a name="[141]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[140]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[56]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
@@ -351,41 +351,42 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[76]"></a>strlen</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, strlen.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<BR><BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
 <LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_MAC_address
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_IP_address
 <LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_connect
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FM_AddValue
 <LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
-<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_WiFi_SecKey
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_SSID
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Value
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Addr
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Restore_Default_Setting
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Read
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Pending_Data
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Server_Read
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Read
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Pending_Data
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Server_Pending_Data
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_WiFi_SecKey
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_SSID
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Value
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Addr
+<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Restore_Default_Setting
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Read
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Pending_Data
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Server_Read
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Read
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Pending_Data
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Server_Pending_Data
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;unused_data_handling
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer_Messages
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Check_for_Extra_Bytes
 </UL>
 
-<P><STRONG><a name="[134]"></a>strcmp</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, strcmp.o(.text))
+<P><STRONG><a name="[133]"></a>strcmp</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, strcmp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = strcmp
 </UL>
-<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
+<BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
 </UL>
 
-<P><STRONG><a name="[12e]"></a>memchr</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, memchr.o(.text))
+<P><STRONG><a name="[12d]"></a>memchr</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, memchr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memmem
 </UL>
 
-<P><STRONG><a name="[12f]"></a>memcmp</STRONG> (Thumb, 26 bytes, Stack size 12 bytes, memcmp.o(.text))
+<P><STRONG><a name="[12e]"></a>memcmp</STRONG> (Thumb, 26 bytes, Stack size 12 bytes, memcmp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = memcmp
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memmem
@@ -439,18 +440,18 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__vfscanf
 </UL>
 
-<P><STRONG><a name="[142]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
+<P><STRONG><a name="[141]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
 
-<P><STRONG><a name="[123]"></a>__aeabi_uidivmod</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<P><STRONG><a name="[122]"></a>__aeabi_uidivmod</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
 <P><STRONG><a name="[5c]"></a>__aeabi_uldivmod</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, uldiv.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
-<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
 <P><STRONG><a name="[5b]"></a>_chval</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, _chval.o(.text))
@@ -488,14 +489,14 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[46]"></a>_sgetc</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, _sgetc.o(.text))
-<BR>[Address Reference Count : 2]<UL><LI> __0sscanf.o(.text)
-<LI> sscanf.o(.text)
+<BR>[Address Reference Count : 2]<UL><LI> sscanf.o(.text)
+<LI> __0sscanf.o(.text)
 </UL>
 <P><STRONG><a name="[47]"></a>_sbackspace</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, _sgetc.o(.text))
-<BR>[Address Reference Count : 2]<UL><LI> __0sscanf.o(.text)
-<LI> sscanf.o(.text)
+<BR>[Address Reference Count : 2]<UL><LI> sscanf.o(.text)
+<LI> __0sscanf.o(.text)
 </UL>
-<P><STRONG><a name="[143]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 48 bytes, iusefp.o(.text), UNUSED)
+<P><STRONG><a name="[142]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 48 bytes, iusefp.o(.text), UNUSED)
 
 <P><STRONG><a name="[68]"></a>__aeabi_dadd</STRONG> (Thumb, 322 bytes, Stack size 48 bytes, dadd.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_lasr
@@ -505,7 +506,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
-<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
 <P><STRONG><a name="[6c]"></a>__aeabi_dsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, dadd.o(.text), UNUSED)
@@ -520,25 +521,25 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
-<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
 <P><STRONG><a name="[63]"></a>__aeabi_ddiv</STRONG> (Thumb, 222 bytes, Stack size 32 bytes, ddiv.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 </UL>
 <BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
-<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
 <P><STRONG><a name="[6e]"></a>__aeabi_d2ulz</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, dfixul.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
-<P><STRONG><a name="[120]"></a>__aeabi_cdrcmple</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, cdrcmple.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<P><STRONG><a name="[11f]"></a>__aeabi_cdrcmple</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, cdrcmple.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
 <P><STRONG><a name="[53]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
@@ -547,7 +548,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[144]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[143]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
 <P><STRONG><a name="[5e]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
@@ -556,7 +557,7 @@ Global Symbols
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
 </UL>
 
-<P><STRONG><a name="[145]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[144]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
 <P><STRONG><a name="[5d]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
@@ -564,13 +565,13 @@ Global Symbols
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
 </UL>
 
-<P><STRONG><a name="[146]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
+<P><STRONG><a name="[145]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 
 <P><STRONG><a name="[69]"></a>__aeabi_lasr</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
 
-<P><STRONG><a name="[147]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
+<P><STRONG><a name="[146]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
 
 <P><STRONG><a name="[70]"></a>__rt_ctype_table</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, ctype_o.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;isspace
@@ -620,9 +621,9 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_really_real
 </UL>
 
-<P><STRONG><a name="[148]"></a>_float_round</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, fepilogue.o(.text), UNUSED)
+<P><STRONG><a name="[147]"></a>_float_round</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, fepilogue.o(.text), UNUSED)
 
-<P><STRONG><a name="[149]"></a>_float_epilogue</STRONG> (Thumb, 92 bytes, Stack size 4 bytes, fepilogue.o(.text), UNUSED)
+<P><STRONG><a name="[148]"></a>_float_epilogue</STRONG> (Thumb, 92 bytes, Stack size 4 bytes, fepilogue.o(.text), UNUSED)
 
 <P><STRONG><a name="[c5]"></a>Adjust_DMA_Buffer_Index</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, wifi_module_uart_04.o(i.Adjust_DMA_Buffer_Index))
 <BR><BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer_Messages
@@ -632,7 +633,7 @@ Global Symbols
 <P><STRONG><a name="[73]"></a>BSP_LED_On</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_nucleo.o(i.BSP_LED_On))
 <BR><BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_HAL_UART_ErrorCallback
 <LI><a href="#[6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UsageFault_Handler
@@ -641,7 +642,7 @@ Global Symbols
 <LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardFault_Handler
 <LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DebugMon_Handler
 <LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BusFault_Handler
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
 </UL>
 
 <P><STRONG><a name="[5]"></a>BusFault_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32_xx_it.o(i.BusFault_Handler))
@@ -664,8 +665,8 @@ Global Symbols
 <P><STRONG><a name="[86]"></a>CopyTimeToStr</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, file_manager.o(i.CopyTimeToStr))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = CopyTimeToStr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FM_Init
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FM_AddValue
+<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FM_AddValue
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FM_Init
 </UL>
 
 <P><STRONG><a name="[87]"></a>CopyValueToStr</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, file_manager.o(i.CopyValueToStr))
@@ -694,7 +695,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xe.o(RESET)
 </UL>
-<P><STRONG><a name="[126]"></a>DM_CheckCommand</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, device_manager.o(i.DM_CheckCommand))
+<P><STRONG><a name="[125]"></a>DM_CheckCommand</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, device_manager.o(i.DM_CheckCommand))
 <BR><BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_socket_data_received
 </UL>
 
@@ -710,8 +711,8 @@ Global Symbols
 <P><STRONG><a name="[7b]"></a>DM_Kernel</STRONG> (Thumb, 138 bytes, Stack size 24 bytes, device_manager.o(i.DM_Kernel))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = DM_Kernel &rArr; SendDiscovery &rArr; wifi_socket_client_write &rArr; Queue_Client_Write_Event &rArr; push_eventbuffer_queue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_server_open
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_server_open
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendDiscovery
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_client_open
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
@@ -743,12 +744,12 @@ Global Symbols
 <P><STRONG><a name="[84]"></a>Error_Handler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, wifi_module.o(i.Error_Handler))
 <BR><BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_On
 </UL>
-<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PRINT_MSG_Configuration
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Configuration
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Config
+<BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PRINT_MSG_Configuration
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Configuration
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Config
 </UL>
 
-<P><STRONG><a name="[82]"></a>FM_AddValue</STRONG> (Thumb, 242 bytes, Stack size 32 bytes, file_manager.o(i.FM_AddValue))
+<P><STRONG><a name="[82]"></a>FM_AddValue</STRONG> (Thumb, 256 bytes, Stack size 32 bytes, file_manager.o(i.FM_AddValue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = FM_AddValue &rArr; FM_Init &rArr; wifi_file_create &rArr; Queue_Wifi_File_Create_Event &rArr; push_eventbuffer_queue
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_file_delete
@@ -756,8 +757,10 @@ Global Symbols
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FM_Init
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CopyValueToStr
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CopyTimeToStr
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_ParseCommand
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[85]"></a>FM_Init</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, file_manager.o(i.FM_Init))
@@ -807,15 +810,15 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_Kernel
 <LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpClient
-<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_reset
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpClient
+<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_reset
 </UL>
 
 <P><STRONG><a name="[b7]"></a>HAL_GPIO_DeInit</STRONG> (Thumb, 220 bytes, Stack size 36 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_DeInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = HAL_GPIO_DeInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspDeInit
-<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_reset
+<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_reset
 </UL>
 
 <P><STRONG><a name="[90]"></a>HAL_GPIO_EXTI_Callback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32_xx_it.o(i.HAL_GPIO_EXTI_Callback))
@@ -833,17 +836,17 @@ Global Symbols
 <P><STRONG><a name="[b9]"></a>HAL_GPIO_Init</STRONG> (Thumb, 372 bytes, Stack size 40 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Msg_Gpio_Init
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Msg_Gpio_Init
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
-<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_reset
-<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_wakeup
+<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_reset
+<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_wakeup
 </UL>
 
 <P><STRONG><a name="[74]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin))
 <BR><BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_On
-<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Data
-<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_reset
-<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_wakeup
+<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_reset
+<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_wakeup
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Data
 </UL>
 
 <P><STRONG><a name="[8b]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_hal.o(i.HAL_GetTick))
@@ -855,7 +858,7 @@ Global Symbols
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_WaitOnFlagUntilTimeout
 </UL>
 
-<P><STRONG><a name="[fb]"></a>HAL_IncTick</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal.o(i.HAL_IncTick))
+<P><STRONG><a name="[fa]"></a>HAL_IncTick</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal.o(i.HAL_IncTick))
 <BR><BR>[Called By]<UL><LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
 
@@ -917,14 +920,14 @@ Global Symbols
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
-<P><STRONG><a name="[103]"></a>HAL_RCC_GetPCLK1Freq</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(i.HAL_RCC_GetPCLK1Freq))
+<P><STRONG><a name="[102]"></a>HAL_RCC_GetPCLK1Freq</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(i.HAL_RCC_GetPCLK1Freq))
 <BR><BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
 </UL>
 
-<P><STRONG><a name="[102]"></a>HAL_RCC_GetPCLK2Freq</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(i.HAL_RCC_GetPCLK2Freq))
+<P><STRONG><a name="[101]"></a>HAL_RCC_GetPCLK2Freq</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(i.HAL_RCC_GetPCLK2Freq))
 <BR><BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
 </UL>
 
@@ -939,7 +942,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[95]"></a>HAL_SYSTICK_Config</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(i.HAL_SYSTICK_Config))
@@ -965,7 +968,7 @@ Global Symbols
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeTimer
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Config
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Config
 </UL>
 
 <P><STRONG><a name="[9c]"></a>HAL_TIM_Base_MspInit</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, stm32_xx_hal_msp.o(i.HAL_TIM_Base_MspInit))
@@ -979,7 +982,7 @@ Global Symbols
 
 <P><STRONG><a name="[c3]"></a>HAL_TIM_Base_Start_IT</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(i.HAL_TIM_Base_Start_IT))
 <BR><BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeTimer
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
 </UL>
 
 <P><STRONG><a name="[a0]"></a>HAL_TIM_IC_CaptureCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(i.HAL_TIM_IC_CaptureCallback))
@@ -1027,8 +1030,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspDeInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PRINT_MSG_Configuration
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Configuration
+<BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PRINT_MSG_Configuration
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Configuration
 </UL>
 
 <P><STRONG><a name="[aa]"></a>HAL_UART_ErrorCallback</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32_xx_it.o(i.HAL_UART_ErrorCallback))
@@ -1068,8 +1071,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PRINT_MSG_Configuration
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Configuration
+<BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PRINT_MSG_Configuration
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Configuration
 </UL>
 
 <P><STRONG><a name="[a9]"></a>HAL_UART_MspDeInit</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32_xx_hal_msp.o(i.HAL_UART_MspDeInit))
@@ -1097,11 +1100,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_DMA_Uart_Data
+<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_DMA_Uart_Data
 </UL>
 
-<P><STRONG><a name="[eb]"></a>HAL_UART_Receive_IT</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, stm32f4xx_hal_uart.o(i.HAL_UART_Receive_IT))
-<BR><BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Data
+<P><STRONG><a name="[ea]"></a>HAL_UART_Receive_IT</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, stm32f4xx_hal_uart.o(i.HAL_UART_Receive_IT))
+<BR><BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Data
 </UL>
 
 <P><STRONG><a name="[bb]"></a>HAL_UART_RxCpltCallback</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, stm32_xx_it.o(i.HAL_UART_RxCpltCallback))
@@ -1127,8 +1130,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartSendChar
+<BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartSendChar
 </UL>
 
 <P><STRONG><a name="[c0]"></a>HAL_UART_Transmit_DMA</STRONG> (Thumb, 116 bytes, Stack size 32 bytes, stm32f4xx_hal_uart.o(i.HAL_UART_Transmit_DMA))
@@ -1146,7 +1149,7 @@ Global Symbols
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_DMATransmitCplt
 </UL>
 
-<P><STRONG><a name="[100]"></a>HAL_UART_TxHalfCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_uart.o(i.HAL_UART_TxHalfCpltCallback))
+<P><STRONG><a name="[ff]"></a>HAL_UART_TxHalfCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_uart.o(i.HAL_UART_TxHalfCpltCallback))
 <BR><BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_DMATxHalfCplt
 </UL>
 
@@ -1281,7 +1284,7 @@ Global Symbols
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push_eventbuffer_queue
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wait_For_Sock_Read_To_Complete
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_client_write
+<BR>[Called By]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_client_write
 </UL>
 
 <P><STRONG><a name="[e5]"></a>Queue_File_Event</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, wifi_module.o(i.Queue_File_Event))
@@ -1301,8 +1304,8 @@ Global Symbols
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push_eventbuffer_queue
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wait_For_Sock_Read_To_Complete
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DeQed_Wind_Indication
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer_Messages
+<BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer_Messages
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DeQed_Wind_Indication
 </UL>
 
 <P><STRONG><a name="[e6]"></a>Queue_Server_Open_Event</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, wifi_module.o(i.Queue_Server_Open_Event))
@@ -1315,17 +1318,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_server_open
 </UL>
 
-<P><STRONG><a name="[e7]"></a>Queue_Server_Write_Event</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, wifi_module_uart_04.o(i.Queue_Server_Write_Event))
-<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = Queue_Server_Write_Event &rArr; push_eventbuffer_queue
-</UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_event
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push_eventbuffer_queue
-<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wait_For_Sock_Read_To_Complete
-</UL>
-<BR>[Called By]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_server_write
-</UL>
-
-<P><STRONG><a name="[e8]"></a>Queue_Wifi_File_Create_Event</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, wifi_module.o(i.Queue_Wifi_File_Create_Event))
+<P><STRONG><a name="[e7]"></a>Queue_Wifi_File_Create_Event</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, wifi_module.o(i.Queue_Wifi_File_Create_Event))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = Queue_Wifi_File_Create_Event &rArr; push_eventbuffer_queue
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_event
@@ -1346,104 +1339,105 @@ Global Symbols
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_RxCpltCallback
 </UL>
 
-<P><STRONG><a name="[e9]"></a>Receive_DMA_Uart_Data</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, wifi_module.o(i.Receive_DMA_Uart_Data))
+<P><STRONG><a name="[e8]"></a>Receive_DMA_Uart_Data</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, wifi_module.o(i.Receive_DMA_Uart_Data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = Receive_DMA_Uart_Data &rArr; HAL_UART_Receive_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Receive_DMA
 </UL>
-<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
+<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
 </UL>
 
-<P><STRONG><a name="[ea]"></a>Receive_Data</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, wifi_module.o(i.Receive_Data))
+<P><STRONG><a name="[e9]"></a>Receive_Data</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, wifi_module.o(i.Receive_Data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Receive_Data
 </UL>
 <BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Receive_IT
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Receive_IT
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
 </UL>
 
-<P><STRONG><a name="[ec]"></a>Reset_AT_CMD_Buffer</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, wifi_module.o(i.Reset_AT_CMD_Buffer))
+<P><STRONG><a name="[eb]"></a>Reset_AT_CMD_Buffer</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, wifi_module.o(i.Reset_AT_CMD_Buffer))
 <BR><BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
 <LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_MAC_address
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_IP_address
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_file_create
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
-<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_WiFi_SecKey
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_SSID
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Value
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Addr
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Restore_Default_Setting
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Pending_Data
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Pending_Data
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Server_Pending_Data
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_WiFi_SecKey
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_SSID
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Value
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Addr
+<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Restore_Default_Setting
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Pending_Data
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Pending_Data
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Server_Pending_Data
 </UL>
 
-<P><STRONG><a name="[ed]"></a>Restore_Default_Setting</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, wifi_module.o(i.Restore_Default_Setting))
+<P><STRONG><a name="[ec]"></a>Restore_Default_Setting</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, wifi_module.o(i.Restore_Default_Setting))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Restore_Default_Setting &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
 </UL>
 
-<P><STRONG><a name="[10e]"></a>Resume_Dequeue</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, wifi_module.o(i.Resume_Dequeue))
+<P><STRONG><a name="[10d]"></a>Resume_Dequeue</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, wifi_module.o(i.Resume_Dequeue))
 <BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[f1]"></a>SET_Configuration_Addr</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, wifi_module.o(i.SET_Configuration_Addr))
+<P><STRONG><a name="[f0]"></a>SET_Configuration_Addr</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, wifi_module.o(i.SET_Configuration_Addr))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = SET_Configuration_Addr &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_set_mdns_properties
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
 </UL>
 
-<P><STRONG><a name="[f2]"></a>SET_Configuration_Value</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, wifi_module.o(i.SET_Configuration_Value))
+<P><STRONG><a name="[f1]"></a>SET_Configuration_Value</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, wifi_module.o(i.SET_Configuration_Value))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = SET_Configuration_Value &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
 <LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_connect
 </UL>
 
-<P><STRONG><a name="[f3]"></a>SET_SSID</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, wifi_module.o(i.SET_SSID))
+<P><STRONG><a name="[f2]"></a>SET_SSID</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, wifi_module.o(i.SET_SSID))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = SET_SSID &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_connect
 </UL>
 
-<P><STRONG><a name="[f4]"></a>SET_WiFi_SecKey</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, wifi_module.o(i.SET_WiFi_SecKey))
+<P><STRONG><a name="[f3]"></a>SET_WiFi_SecKey</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, wifi_module.o(i.SET_WiFi_SecKey))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = SET_WiFi_SecKey &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_connect
 </UL>
@@ -1456,7 +1450,7 @@ Global Symbols
 <P><STRONG><a name="[7f]"></a>SendDiscovery</STRONG> (Thumb, 72 bytes, Stack size 32 bytes, device_manager.o(i.SendDiscovery))
 <BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = SendDiscovery &rArr; wifi_socket_client_write &rArr; Queue_Client_Write_Event &rArr; push_eventbuffer_queue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_client_write
+<BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_client_write
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
@@ -1464,61 +1458,61 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_Kernel
 </UL>
 
-<P><STRONG><a name="[f6]"></a>Server_Pending_Data</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, wifi_interface.o(i.Server_Pending_Data))
+<P><STRONG><a name="[f5]"></a>Server_Pending_Data</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, wifi_interface.o(i.Server_Pending_Data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Server_Pending_Data &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[127]"></a>Set_UartMsgHandle</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, wifi_globals.o(i.Set_UartMsgHandle))
+<P><STRONG><a name="[126]"></a>Set_UartMsgHandle</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, wifi_globals.o(i.Set_UartMsgHandle))
 <BR><BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[109]"></a>Set_WiFi_Control_Variables</STRONG> (Thumb, 108 bytes, Stack size 0 bytes, wifi_module.o(i.Set_WiFi_Control_Variables))
-<BR><BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
+<P><STRONG><a name="[108]"></a>Set_WiFi_Control_Variables</STRONG> (Thumb, 108 bytes, Stack size 0 bytes, wifi_module.o(i.Set_WiFi_Control_Variables))
+<BR><BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
 </UL>
 
-<P><STRONG><a name="[f7]"></a>Set_WiFi_Counter_Variables</STRONG> (Thumb, 80 bytes, Stack size 8 bytes, wifi_module.o(i.Set_WiFi_Counter_Variables))
+<P><STRONG><a name="[f6]"></a>Set_WiFi_Counter_Variables</STRONG> (Thumb, 80 bytes, Stack size 8 bytes, wifi_module.o(i.Set_WiFi_Counter_Variables))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Set_WiFi_Counter_Variables
 </UL>
 <BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
+<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
 </UL>
 
-<P><STRONG><a name="[f8]"></a>Socket_Pending_Data</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, wifi_interface.o(i.Socket_Pending_Data))
+<P><STRONG><a name="[f7]"></a>Socket_Pending_Data</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, wifi_interface.o(i.Socket_Pending_Data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Socket_Pending_Data &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[f9]"></a>Socket_Read</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, wifi_interface.o(i.Socket_Read))
+<P><STRONG><a name="[f8]"></a>Socket_Read</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, wifi_interface.o(i.Socket_Read))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = Socket_Read &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[fa]"></a>Socket_Server_Read</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, wifi_interface.o(i.Socket_Server_Read))
+<P><STRONG><a name="[f9]"></a>Socket_Server_Read</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, wifi_interface.o(i.Socket_Server_Read))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = Socket_Server_Read &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
@@ -1528,7 +1522,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[ce]"></a>Start_Timer</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, wifi_module.o(i.Start_Timer))
-<BR><BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
+<BR><BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer_Messages
 </UL>
 
@@ -1537,11 +1531,11 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[a]"></a>SysTick_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32_xx_it.o(i.SysTick_Handler))
-<BR><BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
+<BR><BR>[Calls]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xe.o(RESET)
 </UL>
-<P><STRONG><a name="[fc]"></a>SystemClock_Config</STRONG> (Thumb, 110 bytes, Stack size 88 bytes, main.o(i.SystemClock_Config))
+<P><STRONG><a name="[fb]"></a>SystemClock_Config</STRONG> (Thumb, 110 bytes, Stack size 88 bytes, main.o(i.SystemClock_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
@@ -1580,7 +1574,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 </UL>
 
-<P><STRONG><a name="[fd]"></a>Timer_Config</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32_spwf_wifi.o(i.Timer_Config))
+<P><STRONG><a name="[fc]"></a>Timer_Config</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32_spwf_wifi.o(i.Timer_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Timer_Config &rArr; HAL_TIM_Base_Init &rArr; HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
@@ -1589,18 +1583,18 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[fe]"></a>UART_Configuration</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, stm32_spwf_wifi.o(i.UART_Configuration))
+<P><STRONG><a name="[fd]"></a>UART_Configuration</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, stm32_spwf_wifi.o(i.UART_Configuration))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = UART_Configuration &rArr; HAL_UART_Init &rArr; HAL_UART_MspInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_DeInit
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
 <LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[101]"></a>UART_Msg_Gpio_Init</STRONG> (Thumb, 128 bytes, Stack size 40 bytes, main.o(i.UART_Msg_Gpio_Init))
+<P><STRONG><a name="[100]"></a>UART_Msg_Gpio_Init</STRONG> (Thumb, 128 bytes, Stack size 40 bytes, main.o(i.UART_Msg_Gpio_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = UART_Msg_Gpio_Init &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
@@ -1622,7 +1616,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xe.o(RESET)
 </UL>
-<P><STRONG><a name="[104]"></a>USART_PRINT_MSG_Configuration</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, main.o(i.USART_PRINT_MSG_Configuration))
+<P><STRONG><a name="[103]"></a>USART_PRINT_MSG_Configuration</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, main.o(i.USART_PRINT_MSG_Configuration))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = USART_PRINT_MSG_Configuration &rArr; HAL_UART_Init &rArr; HAL_UART_MspInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
@@ -1632,50 +1626,49 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[f0]"></a>USART_Receive_AT_Resp</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, wifi_module.o(i.USART_Receive_AT_Resp))
-<BR><BR>[Called By]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_server_write
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_server_open
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<P><STRONG><a name="[ef]"></a>USART_Receive_AT_Resp</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, wifi_module.o(i.USART_Receive_AT_Resp))
+<BR><BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
 <LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_MAC_address
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_IP_address
 <LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_connect
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_file_delete
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_file_create
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_client_write
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_server_open
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_client_write
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_client_open
-<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_WiFi_SecKey
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_SSID
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Value
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Addr
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Restore_Default_Setting
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_WiFi_SecKey
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_SSID
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Value
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Addr
+<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Restore_Default_Setting
 </UL>
 
-<P><STRONG><a name="[ef]"></a>USART_Transmit_AT_Cmd</STRONG> (Thumb, 102 bytes, Stack size 8 bytes, wifi_module.o(i.USART_Transmit_AT_Cmd))
+<P><STRONG><a name="[ee]"></a>USART_Transmit_AT_Cmd</STRONG> (Thumb, 102 bytes, Stack size 8 bytes, wifi_module.o(i.USART_Transmit_AT_Cmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_On
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit
-<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Data
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_Data
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
 <LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_MAC_address
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_IP_address
 <LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_connect
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
-<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_WiFi_SecKey
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_SSID
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Value
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Addr
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Restore_Default_Setting
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Read
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Pending_Data
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Server_Read
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Read
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Pending_Data
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Server_Pending_Data
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_WiFi_SecKey
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_SSID
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Value
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Addr
+<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Restore_Default_Setting
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Read
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Pending_Data
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Server_Read
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Read
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Pending_Data
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Server_Pending_Data
 </UL>
 
 <P><STRONG><a name="[6]"></a>UsageFault_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32_xx_it.o(i.UsageFault_Handler))
@@ -1687,8 +1680,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xe.o(RESET)
 </UL>
 <P><STRONG><a name="[e2]"></a>Wait_For_Sock_Read_To_Complete</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, wifi_module.o(i.Wait_For_Sock_Read_To_Complete))
-<BR><BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Wifi_File_Create_Event
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Server_Write_Event
+<BR><BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Wifi_File_Create_Event
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Server_Open_Event
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Server_Close_Event
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_File_Event
@@ -1697,23 +1689,23 @@ Global Symbols
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Client_Close_Event
 </UL>
 
-<P><STRONG><a name="[105]"></a>Websocket_Pending_Data</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, wifi_interface.o(i.Websocket_Pending_Data))
+<P><STRONG><a name="[104]"></a>Websocket_Pending_Data</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, wifi_interface.o(i.Websocket_Pending_Data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Websocket_Pending_Data &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[106]"></a>Websocket_Read</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, wifi_interface.o(i.Websocket_Read))
+<P><STRONG><a name="[105]"></a>Websocket_Read</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, wifi_interface.o(i.Websocket_Read))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = Websocket_Read &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
@@ -1736,93 +1728,93 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_TxCpltCallback
 </UL>
 
-<P><STRONG><a name="[107]"></a>WiFi_Module_Init</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, wifi_module.o(i.WiFi_Module_Init))
+<P><STRONG><a name="[106]"></a>WiFi_Module_Init</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, wifi_module.o(i.WiFi_Module_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = WiFi_Module_Init &rArr; Receive_DMA_Uart_Data &rArr; HAL_UART_Receive_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_On
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_WiFi_Counter_Variables
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_WiFi_Control_Variables
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_DMA_Uart_Data
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;event_init
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_DMA_Uart_Data
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;event_init
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Start_Timer
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_WiFi_Counter_Variables
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_WiFi_Control_Variables
 </UL>
-<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
 </UL>
 
 <P><STRONG><a name="[a7]"></a>Wifi_TIM_Handler</STRONG> (Thumb, 3394 bytes, Stack size 56 bytes, wifi_module.o(i.Wifi_TIM_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 180<LI>Call Chain = Wifi_TIM_Handler &rArr; ind_wifi_socket_data_received &rArr; DM_ParseCommand &rArr; FM_AddValue &rArr; FM_Init &rArr; wifi_file_create &rArr; Queue_Wifi_File_Create_Event &rArr; push_eventbuffer_queue
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_socket_data_received
-<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_on
-<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_error
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_connected
-<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_ap_client_left
-<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_ap_client_joined
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_socket_server_client_left
-<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_socket_server_client_joined
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_on
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_error
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_connected
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_ap_client_left
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_ap_client_joined
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_socket_server_client_left
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_socket_server_client_joined
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit_DMA
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Resume_Dequeue
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DeQed_Wind_Indication
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Client_Close_Event
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Read
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Pending_Data
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Server_Read
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Read
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Pending_Data
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Server_Pending_Data
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Read
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Pending_Data
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Server_Read
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Read
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Pending_Data
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Server_Pending_Data
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_warning
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_socket_server_data_lost
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_warning
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_socket_server_data_lost
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_socket_list_data_available
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_socket_client_remote_server_closed
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_resuming
-<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_packet_lost
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_socket_client_remote_server_closed
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_resuming
+<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_packet_lost
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_mqtt_data_received
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_mqtt_closed
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_mqtt_closed
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_http_data_available
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_file_data_available
-<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_connection_error
-<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_ap_ready
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop_eventbuffer_queue
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_connection_error
+<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_ap_ready
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop_eventbuffer_queue
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Resume_Dequeue
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DeQed_Wind_Indication
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 </UL>
 
-<P><STRONG><a name="[11c]"></a>__0printf</STRONG> (Thumb, 22 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<P><STRONG><a name="[11b]"></a>__0printf</STRONG> (Thumb, 22 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[14a]"></a>__1printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
+<P><STRONG><a name="[149]"></a>__1printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
 
 <P><STRONG><a name="[7c]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_ParseCommand
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_Kernel
 <LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_socket_data_received
-<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_error
-<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_ap_client_left
-<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_ap_client_joined
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_socket_server_client_left
-<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_socket_server_client_joined
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_error
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_ap_client_left
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_ap_client_joined
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_socket_server_client_left
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_socket_server_client_joined
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendDiscovery
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpClient
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpClient
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer_Messages
 </UL>
 
-<P><STRONG><a name="[14b]"></a>__c89printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
+<P><STRONG><a name="[14a]"></a>__c89printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
 
 <P><STRONG><a name="[da]"></a>printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = printf
@@ -1830,65 +1822,65 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer_Messages
 </UL>
 
-<P><STRONG><a name="[11e]"></a>__0sprintf</STRONG> (Thumb, 34 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
+<P><STRONG><a name="[11d]"></a>__0sprintf</STRONG> (Thumb, 34 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sputc
-<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[14c]"></a>__1sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
+<P><STRONG><a name="[14b]"></a>__1sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
 
-<P><STRONG><a name="[ee]"></a>__2sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf))
+<P><STRONG><a name="[ed]"></a>__2sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2sprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
 <LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_MAC_address
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_IP_address
 <LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_connect
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
-<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_WiFi_SecKey
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_SSID
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Value
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Addr
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Restore_Default_Setting
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Read
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Pending_Data
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Server_Read
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Read
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Pending_Data
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Server_Pending_Data
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_WiFi_SecKey
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_SSID
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Value
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Addr
+<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Restore_Default_Setting
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Read
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Websocket_Pending_Data
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Server_Read
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Read
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket_Pending_Data
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Server_Pending_Data
 </UL>
 
-<P><STRONG><a name="[14d]"></a>__c89sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
+<P><STRONG><a name="[14c]"></a>__c89sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
 
-<P><STRONG><a name="[14e]"></a>sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
+<P><STRONG><a name="[14d]"></a>sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
 
-<P><STRONG><a name="[14f]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[14e]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[150]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[14f]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[151]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[150]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[65]"></a>_is_digit</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, scanf_fp.o(i._is_digit), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_really_real
 </UL>
 
-<P><STRONG><a name="[131]"></a>event_empty</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, event_buffer.o(i.event_empty))
-<BR><BR>[Called By]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop_eventbuffer_queue
+<P><STRONG><a name="[130]"></a>event_empty</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, event_buffer.o(i.event_empty))
+<BR><BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop_eventbuffer_queue
 </UL>
 
-<P><STRONG><a name="[132]"></a>event_full</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, event_buffer.o(i.event_full))
+<P><STRONG><a name="[131]"></a>event_full</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, event_buffer.o(i.event_full))
 <BR><BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push_eventbuffer_queue
 </UL>
 
-<P><STRONG><a name="[10a]"></a>event_init</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, event_buffer.o(i.event_init))
-<BR><BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
+<P><STRONG><a name="[109]"></a>event_init</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, event_buffer.o(i.event_init))
+<BR><BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
 </UL>
 
 <P><STRONG><a name="[50]"></a>fputc</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, console.o(i.fputc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = fputc &rArr; uartSendChar &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartSendChar
+<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartSendChar
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> printfa.o(i.__0printf)
 </UL>
@@ -1898,7 +1890,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_Init
 </UL>
 
-<P><STRONG><a name="[10f]"></a>ind_socket_server_client_joined</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, main.o(i.ind_socket_server_client_joined))
+<P><STRONG><a name="[10e]"></a>ind_socket_server_client_joined</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, main.o(i.ind_socket_server_client_joined))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = ind_socket_server_client_joined &rArr; __2printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fflush
@@ -1907,7 +1899,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[110]"></a>ind_socket_server_client_left</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, main.o(i.ind_socket_server_client_left))
+<P><STRONG><a name="[10f]"></a>ind_socket_server_client_left</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, main.o(i.ind_socket_server_client_left))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = ind_socket_server_client_left &rArr; __2printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fflush
@@ -1916,7 +1908,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[116]"></a>ind_wifi_ap_client_joined</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, main.o(i.ind_wifi_ap_client_joined))
+<P><STRONG><a name="[115]"></a>ind_wifi_ap_client_joined</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, main.o(i.ind_wifi_ap_client_joined))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = ind_wifi_ap_client_joined &rArr; __2printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fflush
@@ -1925,7 +1917,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[117]"></a>ind_wifi_ap_client_left</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, main.o(i.ind_wifi_ap_client_left))
+<P><STRONG><a name="[116]"></a>ind_wifi_ap_client_left</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, main.o(i.ind_wifi_ap_client_left))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = ind_wifi_ap_client_left &rArr; __2printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fflush
@@ -1934,19 +1926,19 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[115]"></a>ind_wifi_ap_ready</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_ap_ready))
+<P><STRONG><a name="[114]"></a>ind_wifi_ap_ready</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_ap_ready))
 <BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[114]"></a>ind_wifi_connected</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, main.o(i.ind_wifi_connected))
+<P><STRONG><a name="[113]"></a>ind_wifi_connected</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, main.o(i.ind_wifi_connected))
 <BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[11a]"></a>ind_wifi_connection_error</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_connection_error))
+<P><STRONG><a name="[119]"></a>ind_wifi_connection_error</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_connection_error))
 <BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[118]"></a>ind_wifi_error</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, main.o(i.ind_wifi_error))
+<P><STRONG><a name="[117]"></a>ind_wifi_error</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, main.o(i.ind_wifi_error))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = ind_wifi_error &rArr; __2printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
@@ -1968,7 +1960,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_Wind_Indication
 </UL>
 
-<P><STRONG><a name="[10c]"></a>ind_wifi_mqtt_closed</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_mqtt_closed))
+<P><STRONG><a name="[10b]"></a>ind_wifi_mqtt_closed</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_mqtt_closed))
 <BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
@@ -1977,7 +1969,7 @@ Global Symbols
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer_Messages
 </UL>
 
-<P><STRONG><a name="[113]"></a>ind_wifi_on</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, main.o(i.ind_wifi_on))
+<P><STRONG><a name="[112]"></a>ind_wifi_on</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, main.o(i.ind_wifi_on))
 <BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
@@ -1985,24 +1977,24 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_Wind_Indication
 </UL>
 
-<P><STRONG><a name="[11b]"></a>ind_wifi_packet_lost</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_packet_lost))
+<P><STRONG><a name="[11a]"></a>ind_wifi_packet_lost</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_packet_lost))
 <BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[112]"></a>ind_wifi_resuming</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_resuming))
+<P><STRONG><a name="[111]"></a>ind_wifi_resuming</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_resuming))
 <BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[10d]"></a>ind_wifi_socket_client_remote_server_closed</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_socket_client_remote_server_closed))
+<P><STRONG><a name="[10c]"></a>ind_wifi_socket_client_remote_server_closed</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_socket_client_remote_server_closed))
 <BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
 <P><STRONG><a name="[d5]"></a>ind_wifi_socket_data_received</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, main.o(i.ind_wifi_socket_data_received))
 <BR><BR>[Stack]<UL><LI>Max Depth = 124<LI>Call Chain = ind_wifi_socket_data_received &rArr; DM_ParseCommand &rArr; FM_AddValue &rArr; FM_Init &rArr; wifi_file_create &rArr; Queue_Wifi_File_Create_Event &rArr; push_eventbuffer_queue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseAnswer
+<BR>[Calls]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseAnswer
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_ParseCommand
-<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_CheckCommand
+<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_CheckCommand
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
@@ -2015,16 +2007,16 @@ Global Symbols
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer_Messages
 </UL>
 
-<P><STRONG><a name="[111]"></a>ind_wifi_socket_server_data_lost</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_socket_server_data_lost))
+<P><STRONG><a name="[110]"></a>ind_wifi_socket_server_data_lost</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_socket_server_data_lost))
 <BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[119]"></a>ind_wifi_warning</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_warning))
+<P><STRONG><a name="[118]"></a>ind_wifi_warning</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wifi_module.o(i.ind_wifi_warning))
 <BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
 
-<P><STRONG><a name="[108]"></a>init</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, ring_buffer.o(i.init))
-<BR><BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
+<P><STRONG><a name="[107]"></a>init</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, ring_buffer.o(i.init))
+<BR><BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
 </UL>
 
 <P><STRONG><a name="[c7]"></a>is_End_of_Buffer_Reached</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, wifi_module_uart_04.o(i.is_End_of_Buffer_Reached))
@@ -2036,26 +2028,26 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer
 </UL>
 
-<P><STRONG><a name="[43]"></a>main</STRONG> (Thumb, 510 bytes, Stack size 40 bytes, main.o(i.main))
+<P><STRONG><a name="[43]"></a>main</STRONG> (Thumb, 508 bytes, Stack size 40 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = main &rArr; wifi_init &rArr; UART_Configuration &rArr; HAL_UART_Init &rArr; HAL_UART_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_server_write
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_server_open
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<BR>[Calls]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_set_mdns_properties
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
 <LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_MAC_address
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_get_IP_address
 <LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_connect
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpRequest
-<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_UartMsgHandle
+<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpRequest
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_UartMsgHandle
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FM_AddValue
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_Kernel
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_Init
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PRINT_MSG_Configuration
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Msg_Gpio_Init
-<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PRINT_MSG_Configuration
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Msg_Gpio_Init
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeTimer
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Configuration
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Config
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Configuration
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Config
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_DisableIRQ
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
@@ -2073,40 +2065,40 @@ Global Symbols
 <P><STRONG><a name="[d6]"></a>memmem</STRONG> (Thumb, 78 bytes, Stack size 24 bytes, wifi_module_uart_04.o(i.memmem))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = memmem &rArr; memcmp
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memchr
+<BR>[Calls]<UL><LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memchr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer_Messages
 </UL>
 
-<P><STRONG><a name="[130]"></a>ntpClient</STRONG> (Thumb, 128 bytes, Stack size 64 bytes, ntp.o(i.ntpClient))
+<P><STRONG><a name="[12f]"></a>ntpClient</STRONG> (Thumb, 128 bytes, Stack size 64 bytes, ntp.o(i.ntpClient))
 <BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = ntpClient &rArr; wifi_socket_client_write &rArr; Queue_Client_Write_Event &rArr; push_eventbuffer_queue
 </UL>
 <BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_client_write
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_client_write
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_socket_client_open
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpRequest
+<BR>[Called By]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpRequest
 </UL>
 
-<P><STRONG><a name="[12d]"></a>ntpRequest</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, ntp.o(i.ntpRequest))
+<P><STRONG><a name="[12c]"></a>ntpRequest</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, ntp.o(i.ntpRequest))
 <BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = ntpRequest &rArr; ntpClient &rArr; wifi_socket_client_write &rArr; Queue_Client_Write_Event &rArr; push_eventbuffer_queue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpClient
+<BR>[Calls]<UL><LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpClient
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[125]"></a>parseAnswer</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, ntp.o(i.parseAnswer))
+<P><STRONG><a name="[124]"></a>parseAnswer</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, ntp.o(i.parseAnswer))
 <BR><BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ind_wifi_socket_data_received
 </UL>
 
-<P><STRONG><a name="[10b]"></a>pop_eventbuffer_queue</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, event_buffer.o(i.pop_eventbuffer_queue))
+<P><STRONG><a name="[10a]"></a>pop_eventbuffer_queue</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, event_buffer.o(i.pop_eventbuffer_queue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = pop_eventbuffer_queue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;event_empty
+<BR>[Calls]<UL><LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;event_empty
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifi_TIM_Handler
 </UL>
@@ -2114,10 +2106,9 @@ Global Symbols
 <P><STRONG><a name="[cf]"></a>push_eventbuffer_queue</STRONG> (Thumb, 114 bytes, Stack size 20 bytes, event_buffer.o(i.push_eventbuffer_queue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = push_eventbuffer_queue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;event_full
+<BR>[Calls]<UL><LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;event_full
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Wifi_File_Create_Event
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Server_Write_Event
+<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Wifi_File_Create_Event
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Server_Open_Event
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Server_Close_Event
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_File_Event
@@ -2128,8 +2119,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[cb]"></a>reset_event</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, event_buffer.o(i.reset_event))
-<BR><BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Wifi_File_Create_Event
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Server_Write_Event
+<BR><BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Wifi_File_Create_Event
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Server_Open_Event
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Server_Close_Event
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_File_Event
@@ -2139,7 +2129,7 @@ Global Symbols
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_DMA_Buffer_Messages
 </UL>
 
-<P><STRONG><a name="[124]"></a>uartSendChar</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, console.o(i.uartSendChar))
+<P><STRONG><a name="[123]"></a>uartSendChar</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, console.o(i.uartSendChar))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = uartSendChar &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit
@@ -2161,13 +2151,13 @@ Global Symbols
 <P><STRONG><a name="[129]"></a>wifi_connect</STRONG> (Thumb, 194 bytes, Stack size 16 bytes, wifi_interface.o(i.wifi_connect))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = wifi_connect &rArr; SET_Configuration_Value &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_WiFi_SecKey
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_SSID
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Value
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_WiFi_SecKey
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_SSID
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Value
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -2175,48 +2165,48 @@ Global Symbols
 <P><STRONG><a name="[89]"></a>wifi_file_create</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, wifi_interface.o(i.wifi_file_create))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = wifi_file_create &rArr; Queue_Wifi_File_Create_Event &rArr; push_eventbuffer_queue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
-<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Wifi_File_Create_Event
+<BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Wifi_File_Create_Event
 </UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FM_Init
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FM_AddValue
+<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FM_AddValue
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FM_Init
 </UL>
 
 <P><STRONG><a name="[88]"></a>wifi_file_delete</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, wifi_interface.o(i.wifi_file_delete))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = wifi_file_delete &rArr; Queue_File_Event &rArr; push_eventbuffer_queue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_File_Event
 </UL>
 <BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FM_AddValue
 </UL>
 
-<P><STRONG><a name="[133]"></a>wifi_firmware_middleware_version_compatibility</STRONG> (Thumb, 132 bytes, Stack size 40 bytes, wifi_module.o(i.wifi_firmware_middleware_version_compatibility))
+<P><STRONG><a name="[132]"></a>wifi_firmware_middleware_version_compatibility</STRONG> (Thumb, 132 bytes, Stack size 40 bytes, wifi_module.o(i.wifi_firmware_middleware_version_compatibility))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = wifi_firmware_middleware_version_compatibility &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
-<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
 </UL>
 
 <P><STRONG><a name="[12a]"></a>wifi_get_IP_address</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, wifi_interface.o(i.wifi_get_IP_address))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = wifi_get_IP_address &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -2224,40 +2214,40 @@ Global Symbols
 <P><STRONG><a name="[12b]"></a>wifi_get_MAC_address</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, wifi_interface.o(i.wifi_get_MAC_address))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = wifi_get_MAC_address &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[128]"></a>wifi_init</STRONG> (Thumb, 774 bytes, Stack size 16 bytes, wifi_interface.o(i.wifi_init))
+<P><STRONG><a name="[127]"></a>wifi_init</STRONG> (Thumb, 774 bytes, Stack size 16 bytes, wifi_interface.o(i.wifi_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = wifi_init &rArr; UART_Configuration &rArr; HAL_UART_Init &rArr; HAL_UART_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Configuration
-<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_reset
-<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Value
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Addr
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Restore_Default_Setting
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_DMA_Uart_Data
-<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_wakeup
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit_AT_Cmd
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_AT_CMD_Buffer
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Configuration
+<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_reset
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_firmware_middleware_version_compatibility
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WiFi_Module_Init
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Value
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Addr
+<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Restore_Default_Setting
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Receive_DMA_Uart_Data
+<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_wakeup
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[136]"></a>wifi_reset</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, wifi_module.o(i.wifi_reset))
+<P><STRONG><a name="[135]"></a>wifi_reset</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, wifi_module.o(i.wifi_reset))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = wifi_reset &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
@@ -2265,55 +2255,53 @@ Global Symbols
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_DeInit
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+</UL>
+
+<P><STRONG><a name="[128]"></a>wifi_set_mdns_properties</STRONG> (Thumb, 98 bytes, Stack size 24 bytes, wifi_interface.o(i.wifi_set_mdns_properties))
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = wifi_set_mdns_properties &rArr; SET_Configuration_Addr &rArr; USART_Transmit_AT_Cmd &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SET_Configuration_Addr
+</UL>
+<BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[7e]"></a>wifi_socket_client_open</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, wifi_interface.o(i.wifi_socket_client_open))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = wifi_socket_client_open &rArr; Queue_Client_Open_Event &rArr; push_eventbuffer_queue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Client_Open_Event
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_Kernel
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpClient
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpClient
 </UL>
 
-<P><STRONG><a name="[f5]"></a>wifi_socket_client_write</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, wifi_interface.o(i.wifi_socket_client_write))
+<P><STRONG><a name="[f4]"></a>wifi_socket_client_write</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, wifi_interface.o(i.wifi_socket_client_write))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = wifi_socket_client_write &rArr; Queue_Client_Write_Event &rArr; push_eventbuffer_queue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Client_Write_Event
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendDiscovery
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpClient
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ntpClient
 </UL>
 
 <P><STRONG><a name="[7d]"></a>wifi_socket_server_open</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, wifi_interface.o(i.wifi_socket_server_open))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = wifi_socket_server_open &rArr; Queue_Server_Open_Event &rArr; push_eventbuffer_queue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
+<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Server_Open_Event
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DM_Kernel
-<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[12c]"></a>wifi_socket_server_write</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, wifi_interface.o(i.wifi_socket_server_write))
-<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = wifi_socket_server_write &rArr; Queue_Server_Write_Event &rArr; push_eventbuffer_queue
-</UL>
-<BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive_AT_Resp
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Queue_Server_Write_Event
-</UL>
-<BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[135]"></a>wifi_wakeup</STRONG> (Thumb, 70 bytes, Stack size 40 bytes, wifi_interface.o(i.wifi_wakeup))
+<P><STRONG><a name="[134]"></a>wifi_wakeup</STRONG> (Thumb, 70 bytes, Stack size 40 bytes, wifi_interface.o(i.wifi_wakeup))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = wifi_wakeup &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
+<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wifi_init
 </UL>
 <P>
 <H3>
@@ -2351,7 +2339,7 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = UART_DMAError
 </UL>
 <BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_ErrorCallback
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_EndTxTransfer
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_EndTxTransfer
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_EndRxTransfer
 </UL>
 <BR>[Address Reference Count : 2]<UL><LI> stm32f4xx_hal_uart.o(i.HAL_UART_Receive_DMA)
@@ -2381,7 +2369,7 @@ Local Symbols
 <P><STRONG><a name="[4f]"></a>UART_DMATxHalfCplt</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, stm32f4xx_hal_uart.o(i.UART_DMATxHalfCplt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = UART_DMATxHalfCplt
 </UL>
-<BR>[Calls]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_TxHalfCpltCallback
+<BR>[Calls]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_TxHalfCpltCallback
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f4xx_hal_uart.o(i.HAL_UART_Transmit_DMA)
 </UL>
@@ -2390,7 +2378,7 @@ Local Symbols
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_DMAError
 </UL>
 
-<P><STRONG><a name="[ff]"></a>UART_EndTxTransfer</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_hal_uart.o(i.UART_EndTxTransfer))
+<P><STRONG><a name="[fe]"></a>UART_EndTxTransfer</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_hal_uart.o(i.UART_EndTxTransfer))
 <BR><BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_DMAError
 </UL>
 
@@ -2405,8 +2393,8 @@ Local Symbols
 <P><STRONG><a name="[b6]"></a>UART_SetConfig</STRONG> (Thumb, 676 bytes, Stack size 24 bytes, stm32f4xx_hal_uart.o(i.UART_SetConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = UART_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK2Freq
-<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
+<BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK2Freq
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
 </UL>
@@ -2423,38 +2411,38 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit
 </UL>
 
-<P><STRONG><a name="[11f]"></a>_fp_digits</STRONG> (Thumb, 366 bytes, Stack size 64 bytes, printfa.o(i._fp_digits), UNUSED)
+<P><STRONG><a name="[11e]"></a>_fp_digits</STRONG> (Thumb, 366 bytes, Stack size 64 bytes, printfa.o(i._fp_digits), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[11d]"></a>_printf_core</STRONG> (Thumb, 1744 bytes, Stack size 136 bytes, printfa.o(i._printf_core), UNUSED)
+<P><STRONG><a name="[11c]"></a>_printf_core</STRONG> (Thumb, 1744 bytes, Stack size 136 bytes, printfa.o(i._printf_core), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
-<LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
-<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
+<LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
+<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0sprintf
-<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0printf
-</UL>
-
-<P><STRONG><a name="[122]"></a>_printf_post_padding</STRONG> (Thumb, 36 bytes, Stack size 24 bytes, printfa.o(i._printf_post_padding), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0sprintf
+<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0printf
 </UL>
 
-<P><STRONG><a name="[121]"></a>_printf_pre_padding</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, printfa.o(i._printf_pre_padding), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<P><STRONG><a name="[121]"></a>_printf_post_padding</STRONG> (Thumb, 36 bytes, Stack size 24 bytes, printfa.o(i._printf_post_padding), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+</UL>
+
+<P><STRONG><a name="[120]"></a>_printf_pre_padding</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, printfa.o(i._printf_pre_padding), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
 <P><STRONG><a name="[51]"></a>_sputc</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, printfa.o(i._sputc))
-<BR><BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0sprintf
+<BR><BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0sprintf
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> printfa.o(i.__0sprintf)
 </UL>

@@ -8,6 +8,8 @@ uint16_t page_index = 0;
 uint8_t page[MAX_FILE_SIZE];
 uint8_t file_name[15];
 uint8_t dirty = 1;
+// Counter to decide when write file to sdcard
+uint32_t write_counter = 0;
 
 
 void CopyTimeToStr(uint8_t* str)
@@ -15,7 +17,7 @@ void CopyTimeToStr(uint8_t* str)
 	uint32_t num = ntps.secsSince1900-NTP_SEVENTY_YEARS;
 	for(int i=9; i>=0; i--)
 	{
-		str[i] = 30 + num % 10;
+		str[i] = 0x30 + num % 10;
 		num = num / 10;
 	}
 }
@@ -26,7 +28,7 @@ void CopyValueToStr(uint8_t* str, uint8_t num)
 {
 	for(int i=2; i>=0; i--)
 	{
-		str[i] = 30 + num % 10;
+		str[i] = 0x30 + num % 10;
 		num = num / 10;
 		if(num == 0)
 			break;
@@ -66,6 +68,11 @@ void FM_AddValue(uint8_t val)
 		FM_Init();
 		dirty = 0;
 	}
+	else
+	{
+		// substitute last "]" char with ','
+		page[page_index-1] = ',';
+	}
 	
 	// Add the row to the array
 	page[page_index++] = '{';
@@ -90,18 +97,31 @@ void FM_AddValue(uint8_t val)
 	CopyValueToStr(page+page_index,val);
 	page_index = page_index + 2;
 	page[page_index++] = '}';
-	page[page_index++] = ',';
+	page[page_index++] = ']';
 	
+	// Check if we have reached the max_file_size length and we have to create new file
 	if(page_index+DEFAULT_ROW_SIZE >= MAX_FILE_SIZE)
 	{
 		// Page finished on the next record
 		dirty = 1;
 		
+	}	
+}
+
+
+void FM_Check_WTimeout()
+{
+	// Check if it's time to refresh the counter for write on sd card
+	if(page_index > 0 
+		&& write_counter + WRITE_TIMEOUT < ntps.secsSince1900)
+	{
+		// Refresh timer
+		write_counter = ntps.secsSince1900;
+		// Delete the file
+		wifi_file_delete((char*)file_name);
+		// Create it again
+		wifi_file_create((char*)file_name,strlen((char*)page),(char*)page);
 	}
-	// Delete the file
-	wifi_file_delete((char*)file_name);
-	// Create it again
-	wifi_file_create((char*)file_name,MAX_FILE_SIZE,(char*)page);
 }
 
 
