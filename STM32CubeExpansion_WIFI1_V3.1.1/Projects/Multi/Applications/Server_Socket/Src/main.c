@@ -43,7 +43,6 @@
 #include "wifi_interface.h"
 #include "ntp.h"
 #include "device_manager.h"
-#include "file_manager.h"
 
 /** @defgroup WIFI_Examples
   * @{
@@ -72,6 +71,8 @@ void 	SystemClock_Config(void);
 void    UART_Msg_Gpio_Init(void);
 void    USART_PRINT_MSG_Configuration(UART_HandleTypeDef *UART_MsgHandle, uint32_t baud_rate);
 WiFi_Status_t 	wifi_get_AP_settings(void);
+void GPIO_Config();
+void Pir_Config(void);
 
 /* Private Declarartion ------------------------------------------------------*/
 wifi_state_t wifi_state;
@@ -143,17 +144,7 @@ void InitializeTimer()
 }
 
 
-/**
-		INIT PIR GPIO [PA_8]
-*/
-void init_pir(void)
-{	
-	/*Configure GPIO PA_8 as input pin*/
-	GPIO_InitStruct.Pin = GPIO_PIN_8;
-	GPIO_InitStruct.Mode = GPIO_MODE_EVT_RISING;
-	GPIO_InitStruct.Pull = GPIO_NOPULL;
-	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct); 
-}
+
 
 /*
  * Start the timer ticking
@@ -189,24 +180,31 @@ void StopTimer()
 int main(void)
 {
   WiFi_Status_t status = WiFi_MODULE_SUCCESS;
-  char *protocol = "t";
-  uint32_t portnumber = 32000;
   
 	/*
 			INIT PERIFERICHE
 	*/
+	/* Led 2 config */
+  GPIO_Config();	
 	
-  __GPIOA_CLK_ENABLE();
+	/* Configure PIR GPIO */
+	Pir_Config();
+	
   HAL_Init();
 
   /* Configure the system clock to 64 MHz */
   SystemClock_Config();
+	
+	/* Initialize LED2 Clock */
+	//LED2_GPIO_CLK_ENABLE();
+	
+	
+	/* Turn on LED2*/
+	HAL_GPIO_WritePin(LED2_GPIO_PORT,LED2_PIN,GPIO_PIN_SET);
 
   /* configure the timers  */
   Timer_Config( );
 	
-	/* Configure PIR GPIO */
-	//init_pir();
   
 #ifdef USART_PRINT_MSG
   UART_Msg_Gpio_Init();
@@ -218,12 +216,19 @@ int main(void)
 	/* Configure NTP Timer */
 	InitializeTimer();
 	
-  /*status = wifi_get_AP_settings();
-  if(status!=WiFi_MODULE_SUCCESS)
-  {
-    printf("\r\nError in AP Settings");
-    return 0;
-  }*/
+	
+	/* Initialize User Button Clock */
+	USER_BUTTON_GPIO_CLK_ENABLE();
+	printf("\r\n#################################################");
+	printf("\r\n##########                             ##########");
+	printf("\r\n########## UNIBO ACCESS CONTROL SYSTEM ##########");
+	printf("\r\n##########           v 1.0             ##########");
+	printf("\r\n##########                             ##########");
+	printf("\r\n########## Press user button to start! ##########");
+	printf("\r\n##########                             ##########");
+	printf("\r\n#################################################");
+  // Wait until user button is cliccked
+	while(HAL_GPIO_ReadPin(USER_BUTTON_GPIO_PORT,USER_BUTTON_PIN));
 	
 	/*
 			INIT WIFI CONF
@@ -262,6 +267,8 @@ int main(void)
 	
 	
 	printf("\r\nMain state machine started.");
+	/* Turn off LED2*/
+	HAL_GPIO_WritePin(LED2_GPIO_PORT,LED2_PIN,GPIO_PIN_RESET);
 	
 	
 	// Initializing ntp state machine to reset
@@ -270,7 +277,6 @@ int main(void)
 	// Initializing DM state machine to reset
 	dsm_state = dsm_state_reset;
 	
-	int timerValue = 0;
 	
   while (1)
   {
@@ -298,12 +304,12 @@ int main(void)
         WiFi_Status_t status;
         
         status = wifi_get_IP_address((uint8_t*)wifi_ip_addr);
-        printf("\r\n>>    IP address is %s", wifi_ip_addr);
+        printf("\r\n    >>IP address is %s", wifi_ip_addr);
         
         memset(wifi_mac_addr, 0x00, 20);
         
         status = wifi_get_MAC_address((uint8_t*)wifi_mac_addr);
-        printf("\r\n>>    Mac address is %s\r\n", wifi_mac_addr);
+        printf("\r\n    >>Mac address is %s\r\n", wifi_mac_addr);
         
 			
 				// Init Device manager
@@ -392,9 +398,7 @@ int main(void)
 					printf("\r\n  >>[NTP] NTP Error, Reseting the procedure..");
 					ntp_state = ntp_state_reset;
 					break;
-				case ntp_state_idle:
-					if(!timerValue++)
-						FM_AddValue(100);
+				case ntp_state_idle:					
 					// Check aux devices Connection State Machine
 					DM_Kernel(&dsm_state);
 					break;
@@ -501,6 +505,32 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;  
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;  
   HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2);
+}
+
+
+
+void GPIO_Config()
+{
+	GPIO_InitTypeDef GPIO_InitStructure; 
+	__GPIOA_CLK_ENABLE();
+	GPIO_InitStructure.Pin   = LED2_PIN;
+	GPIO_InitStructure.Mode  = GPIO_MODE_OUTPUT_PP;    
+	GPIO_InitStructure.Pull  = GPIO_PULLUP;
+	GPIO_InitStructure.Speed = GPIO_SPEED_HIGH;  
+	HAL_GPIO_Init(LED2_GPIO_PORT, &GPIO_InitStructure);
+}
+
+
+/**
+		INIT PIR GPIO [PA_8]
+*/
+void Pir_Config(void)
+{	
+	/*Configure GPIO PA_8 as input pin*/
+	GPIO_InitStruct.Pin = GPIO_PIN_6;
+	GPIO_InitStruct.Mode = GPIO_MODE_EVT_RISING;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct); 
 }
 #endif
 

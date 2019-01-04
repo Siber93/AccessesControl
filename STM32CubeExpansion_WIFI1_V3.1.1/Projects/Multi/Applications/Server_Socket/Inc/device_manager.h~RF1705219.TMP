@@ -9,8 +9,6 @@
 #define DISCOVERY_SEQ2_BYTE											(char)0xFF
 #define MAX_DEVICE_NUMBER												10
 
-#define MAX_PIR_DELTA_TIME											60*20 // 20 mins
-
 
 
 typedef enum {

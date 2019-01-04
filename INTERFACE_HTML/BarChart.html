@@ -44,7 +44,7 @@
 		$(function() {
 		  $('input[name="datetimes"]').daterangepicker({
 			timePicker: true,
-			startDate: moment().startOf('hour').subtract(32, 'hour'),
+			startDate: moment().startOf('hour').subtract(1, 'hour'),
 			endDate: moment().startOf('hour'),
 			locale: {
 			  format: 'YYYY-MM-DDTHH:mm:ss'
@@ -103,6 +103,11 @@
 						return false;
 					}
 					
+					if(stringArray[0] == "")
+					{
+						stringArray.shift();
+					}
+					
 					var interval = (end-start) /intervalNumber;				
 					
 					// Trovo i limiti superiore ed inferiore tra i nomi dei file
@@ -125,12 +130,22 @@
 							break;						
 						}
 					}	
-
-
+					var addHead = false;
+					var addQueue = false;
+					
+					if(edgeDown == 0)
+					{
+						addHead = true;
+					}
+					if(edgeUp == stringArray.length-1)
+					{
+						addQueue = true;
+					}
 						
 					
 					// Aprire tutti i file citati e mergiare gli array in uno unico
 					var mergedArray = [];
+					
 					for (var i = edgeDown; i <= edgeUp; i++) {
 						$.ajax({
 							url : stringArray[i],
@@ -155,6 +170,9 @@
 					}
 					
 					
+					edgeDown = 0;
+					edgeUp = mergedArray.length-1;
+					
 					// Ricalcolare edgeUp and edgeDown su nuovo array completo
 					for (var i = 0; i < mergedArray.length; i++) {
 						var val = parseInt(mergedArray[i].time);
@@ -177,8 +195,8 @@
 					// Creare un nuovo array con in posizione 0 il valore di edgeDown ed in posizione N il valore di edgeUp
 					
 					var mergedFinalArray = mergedArray.slice(edgeDown,edgeUp);
-					mergedFinalArray[0].time = start+"";
-					mergedFinalArray[mergedFinalArray.length-1].time = end+"";
+					mergedFinalArray[0].time = start;
+					mergedFinalArray[mergedFinalArray.length-1].time = end;
 					
 					if(mergedFinalArray.length == 0)
 					{
@@ -194,7 +212,7 @@
 					for (var j = 0; j < mergedFinalArray.length-1; j++) {
 						var val = parseInt(mergedFinalArray[j].time);
 						var valNext = parseInt(mergedFinalArray[j+1].time);
-						if(val >= start + interval*index)
+						while(val >= start + interval*index)
 						{
 							index++;
 						}
@@ -213,7 +231,7 @@
 					mergedAvgFinalArray.push(obj1);
 					for (var j = 0; j < mergedFinalArray.length-1; j++) {
 						var val = parseInt(mergedFinalArray[j].time);
-						if(val >= start + interval*index)
+						while(val >= start + interval*index)
 						{
 							index++;
 							var prevEdge = start + interval*(index-1)

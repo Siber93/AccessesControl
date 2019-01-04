@@ -19,6 +19,8 @@ char *protocolC = "t";
 // Manage the thread concurrency on commands resolving 
 uint8_t cmd_resolver_lock = 0;
 
+uint32_t lastPirMooving = 0;
+
 WiFi_Status_t status;
 
 /*
@@ -83,6 +85,9 @@ void SendDiscovery()
   }	
 }
 
+
+int num_to_print = 0;
+
 /*
  *		Send UDP Broadcast request
 */
@@ -113,6 +118,7 @@ void DM_Kernel(dsm_state_t* dsm_st)
 			// Prepare to send multicast discovery			
 			//*dsm_st = dsm_state_send_multicast;
 			
+			lastPirMooving = ntps.secsSince1900;
 			
 			// Set to ready state
 			*dsm_st = dsm_state_ready;
@@ -138,7 +144,26 @@ void DM_Kernel(dsm_state_t* dsm_st)
 				printf(".");
 			}	
 			break;*/
-		case dsm_state_ready:
+		case dsm_state_ready:			
+			/*FM_AddValue(num_to_print++%99);
+			HAL_Delay(100);*/
+			if(HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_6))
+			{
+				lastPirMooving = ntps.secsSince1900;
+			}
+			else
+			{
+				if(ntps.secsSince1900 - lastPirMooving > MAX_PIR_DELTA_TIME)
+				{
+					while(!cmd_resolver_lock);
+					// Take the lock
+					cmd_resolver_lock++;
+					dms.people = 0;
+					FM_AddValue(dms.people);
+					cmd_resolver_lock--;
+				}
+			}
+			
 			// Check if it's necesary to write the file on sd card
 			FM_Check_WTimeout();
 			break;
@@ -181,34 +206,37 @@ void DM_ParseCommand(uint8_t* data, uint8_t len)
 			}
 			break;
 		case 0x02:
-			if(!cmd_resolver_lock)
+			while(!cmd_resolver_lock);
+		
+			// Take the lock
+			cmd_resolver_lock++;
+			// Notify
+			// parse notify type
+			switch(data[4])
 			{
-				// Take the lock
-				cmd_resolver_lock++;
-				// Notify
-				// parse notify type
-				switch(data[4])
-				{
-					case 0x01:
-						// Entry
+				case 0x01:
+					// Entry
+					if(dms.people <99)
 						dms.people += data[5];
-						printf("\r\n >>[N] %lu - %d Entries - %lu",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS), data[5],(unsigned long)dms.people);
-						break;
-					case 0x02:
-						// Leaving
+					
+					printf("\r\n >>[N] %lu - %d Entries - %lu",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS), data[5],(unsigned long)dms.people);
+					break;
+				case 0x02:
+					// Leaving
+					if(dms.people > 0)
 						dms.people -= data[5];
-						printf("\r\n >>[N] %lu - %d Leavings - %lu",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS), data[5],(unsigned long)dms.people);
-						break;
-					default:
-						// Error
-						printf("\r\n >>[N] %lu - Error, Unknown PKT",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS));
-						break;
-				}		
-				// Print log			
-				FM_AddValue(dms.people);
-				// Release the lock
-				cmd_resolver_lock--;
-			}
+					
+					printf("\r\n >>[N] %lu - %d Leavings - %lu",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS), data[5],(unsigned long)dms.people);
+					break;
+				default:
+					// Error
+					printf("\r\n >>[N] %lu - Error, Unknown PKT",(unsigned long)(ntps.secsSince1900 - NTP_SEVENTY_YEARS));
+					break;
+			}		
+			// Print log			
+			FM_AddValue(dms.people);
+			// Release the lock
+			cmd_resolver_lock--;
 			break;
 		default:
 			// Not Supported

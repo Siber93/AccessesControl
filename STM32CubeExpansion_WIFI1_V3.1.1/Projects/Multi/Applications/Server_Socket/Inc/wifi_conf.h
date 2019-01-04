@@ -21,4 +21,4 @@ SPWF04:                 SPWF04SA module is used as underlying expansion board (X
 0 -> disable debug prints on console
 1 -> enable debug prints on console
 */
-#define DEBUG_PRINT 0
+//#define DEBUG_PRINT 0

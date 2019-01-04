@@ -26,7 +26,9 @@ void CopyTimeToStr(uint8_t* str)
 */
 void CopyValueToStr(uint8_t* str, uint8_t num)
 {
-	for(int i=2; i>=0; i--)
+	str[0] = ' ';
+	str[1] = ' ';
+	for(int i=1; i>=0; i--)
 	{
 		str[i] = 0x30 + num % 10;
 		num = num / 10;
@@ -39,11 +41,11 @@ void CopyValueToStr(uint8_t* str, uint8_t num)
 void FM_Init(void)
 {
 	// Init File with all sapces
-	memset( page, ' ', DEFAULT_ROW_SIZE );
+	//memset( page, ' ', DEFAULT_ROW_SIZE );
 	// Init brackets
 	page[0] = '[';
 	page_index = 1;
-	page[MAX_FILE_SIZE-1] = ']';
+	page[1] = ']';
 	
 	// init file name
 	memset(file_name, '0', 15);
@@ -56,7 +58,7 @@ void FM_Init(void)
 	CopyTimeToStr(file_name);
 	
 	// Create the new file
-	wifi_file_create((char*)file_name,0,(char*)page);
+	wifi_file_create((char*)file_name,2,(char*)page);
 	
 	// Create file name string to appen to db_index.txt
 	char index_file_name[] = "db_index.txt";
@@ -65,7 +67,7 @@ void FM_Init(void)
 	new_file_name[0] = ',';
 	
 	// Add it to the list
-	wifi_file_create((char*)index_file_name,strlen((char*)file_name),(char*)file_name);
+	wifi_file_create((char*)index_file_name,strlen((char*)new_file_name),(char*)new_file_name);
 }
 
 
@@ -93,7 +95,7 @@ void FM_AddValue(uint8_t val)
 	page[page_index++] = '"';
 	page[page_index++] = ':';
 	CopyTimeToStr(page+page_index);
-	page_index = page_index + 9;
+	page_index = page_index + 10;
 	page[page_index++] = ',';
 	page[page_index++] = '"';
 	page[page_index++] = 'v';
@@ -120,16 +122,18 @@ void FM_AddValue(uint8_t val)
 
 void FM_Check_WTimeout()
 {
-	// Check if it's time to refresh the counter for write on sd card
+	
+	// Check if it's time to refresh the counter for write on sd card or dirty flag is set
 	if(page_index > 0 
-		&& write_counter + WRITE_TIMEOUT < ntps.secsSince1900)
+		&& (write_counter + WRITE_TIMEOUT < ntps.secsSince1900 
+				|| dirty))
 	{
 		// Refresh timer
 		write_counter = ntps.secsSince1900;
 		// Delete the file
 		wifi_file_delete((char*)file_name);
 		// Create it again
-		wifi_file_create((char*)file_name,strlen((char*)page),(char*)page);
+		wifi_file_create((char*)file_name,page_index,(char*)page);
 	}
 }
 
