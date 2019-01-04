@@ -55,8 +55,17 @@ void FM_Init(void)
 
 	CopyTimeToStr(file_name);
 	
-	// Create the file
-	wifi_file_create((char*)file_name,MAX_FILE_SIZE,(char*)page);
+	// Create the new file
+	wifi_file_create((char*)file_name,0,(char*)page);
+	
+	// Create file name string to appen to db_index.txt
+	char index_file_name[] = "db_index.txt";
+	char new_file_name[strlen((char*)file_name)+1];
+	strcpy(new_file_name+1,(char*)file_name);
+	new_file_name[0] = ',';
+	
+	// Add it to the list
+	wifi_file_create((char*)index_file_name,strlen((char*)file_name),(char*)file_name);
 }
 
 

@@ -35,16 +35,73 @@
 	<script>
 		var barChartData;
 		var start = 15;
-		var end =45;
+		var end = 45;
 		var intervalNumber = 10;
-
+			
+		
+		
+		
+		$(function() {
+		  $('input[name="datetimes"]').daterangepicker({
+			timePicker: true,
+			startDate: moment().startOf('hour').subtract(32, 'hour'),
+			endDate: moment().startOf('hour'),
+			locale: {
+			  format: 'YYYY-MM-DDTHH:mm:ss'
+			},			
+			maxDate: moment().format('YYYY-MM-DDTHH:mm:ss')
+		  }, 
+		  function(start, end, label) {				// Quando cambia il valore nell'inputtext vado a rileggere start e end, successivamente riplotto tutto il grafico
+			update();
+		  });
+		});
+		
 		
 		window.onload = function(e){ 
+			update();			
+		}
+		
+		function update()
+		{
+			// Aggiorno start ed end
+			readTimeStamp();
+			// Eseguo la query sui file del filesystem
+			if(query())
+			{
+				// Disegno il grafico
+				draw();
+			}
+		}
+		
+		
+		var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		var color = Chart.helpers.color;
+		
+
+		// Leggo i valori dal textinput delle date
+		function readTimeStamp()
+		{
+			var dates = $('input[name="datetimes"]')[0].value.split(" - ");
+			start = (new Date(dates[0]).getTime()/1000);
+			end = (new Date(dates[1]).getTime()/1000);
+			//alert(start + "\r\n"+ end);
+		}
+		
+		
+		// Carica i file json
+		function query()
+		{
 			$.ajax({
 				url : "db_index.txt",
+				async: false,
 				dataType: "text",
 				success : function (data) {
-					var stringArray = data.split(',');			
+					var stringArray = data.split(',');	
+					if(stringArray.length == 0)
+					{
+						// Nessu file sul quale eseguire la query
+						return false;
+					}
 					
 					var interval = (end-start) /intervalNumber;				
 					
@@ -91,6 +148,13 @@
 					
 					
 					
+					if(mergedArray.length == 0)
+					{
+						// Nessun dato sul quale eseguire la query
+						return false;
+					}
+					
+					
 					// Ricalcolare edgeUp and edgeDown su nuovo array completo
 					for (var i = 0; i < mergedArray.length; i++) {
 						var val = parseInt(mergedArray[i].time);
@@ -116,6 +180,12 @@
 					mergedFinalArray[0].time = start+"";
 					mergedFinalArray[mergedFinalArray.length-1].time = end+"";
 					
+					if(mergedFinalArray.length == 0)
+					{
+						// Nessun dato sul quale eseguire la query
+						return false;
+					}
+					
 					
 					// Creare array di pesi per le medie
 					var weights = []
@@ -133,6 +203,7 @@
 						
 						weights.push(Math.min(deltaI,deltaN)/interval);
 					}
+					
 					
 					
 					// Creare array con medie pesate
@@ -181,28 +252,16 @@
 						}]
 
 					};
-					
-					draw();
 				}
 			});
-		}	
+			
+			return true;
+		}
 		
 		
-		$(function() {
-		  $('input[name="datetimes"]').daterangepicker({
-			timePicker: true,
-			startDate: moment().startOf('hour'),
-			endDate: moment().startOf('hour').add(32, 'hour'),
-			locale: {
-			  format: 'M/DD hh:mm A'
-			}
-		  });
-		});
 		
-		var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-		var color = Chart.helpers.color;
 		
-
+		
 		function draw() {
 			var ctx = document.getElementById('canvas').getContext('2d');
 			window.myBar = new Chart(ctx, {
