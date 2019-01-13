@@ -138,6 +138,22 @@ void FM_Check_WTimeout()
 }
 
 
+void FM_Force_Save()
+{
+	
+	// Check if there's something to write
+	if(page_index > 0)
+	{
+		// Refresh timer
+		write_counter = ntps.secsSince1900;
+		// Delete the file
+		wifi_file_delete((char*)file_name);
+		// Create it again
+		wifi_file_create((char*)file_name,page_index,(char*)page);
+	}
+}
+
+
 
 
 

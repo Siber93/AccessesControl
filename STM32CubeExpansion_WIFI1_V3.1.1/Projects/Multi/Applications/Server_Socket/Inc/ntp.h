@@ -19,7 +19,7 @@
 #define NTP_LOCAL_DIFFERERENCE          - 60 * ( 4 * 60 + 30 )
 
 // Delay between two synchronization
-#define NTP_DELAY_SYNCHRO               10
+#define NTP_DELAY_SYNCHRO               83*60 // Time at witch I lost 1 minutes
 
 // Delay in minutes between retries when failure
 #define NTP_DELAY_FAILURE               3
@@ -42,9 +42,7 @@ struct ntp_stru
 {
   char* 		addr;
 	uint8_t		server_id;
-  uint32_t  unixLocalTime;
-  uint32_t  unixTime;
-  uint32_t  lastUnixTime;
+	uint32_t	lastNtpRequest;
 	uint32_t	secsSince1900;
 	uint8_t   server_list_index;
 	uint8_t		retries_counter;

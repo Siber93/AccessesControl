@@ -28,6 +28,8 @@ WiFi_Status_t status;
 */
 void DM_Init(char* ip, int len)
 {
+	// Reset Device Manager struct
+	memset(&dms, 0, sizeof(dms));
 	dms.addr = ip;
 	dms.addr_len = len;
 	memset(dms.d_state,0,MAX_DEVICE_NUMBER);
@@ -59,6 +61,14 @@ void DM_Init(char* ip, int len)
 	DISCOVERY_ADDRESS[l+2] = '5';
 	
 	
+}
+
+/**
+	*			Save collected data if there is someting to save
+*/
+void DM_Force_Save()
+{
+	FM_Force_Save();
 }
 
 
@@ -243,6 +253,7 @@ void DM_ParseCommand(uint8_t* data, uint8_t len)
 			printf("\r\n >>[UKNW_CMD]");
 			break;
 	}
+	
 }
 
 

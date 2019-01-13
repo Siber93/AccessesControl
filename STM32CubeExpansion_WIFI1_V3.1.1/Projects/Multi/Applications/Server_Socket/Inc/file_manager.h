@@ -7,3 +7,4 @@
 
 void FM_AddValue(uint8_t val);
 void FM_Check_WTimeout();
+void FM_Force_Save();

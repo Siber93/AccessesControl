@@ -226,6 +226,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandleArg)
 }
 #endif
 
+
 /**
 * @brief  Period elapsed callback in non blocking mode
 *         This timer is used for calling back User registered functions with information
@@ -237,7 +238,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	if (htim->Instance==TIM4)
 	{
 		// NTP Case
-		// Inc the counter
+		// Inc the counter only if it has been set a first time from ntp server request
 		if(ntps.secsSince1900>0)
 		{
 			ntps.secsSince1900++;

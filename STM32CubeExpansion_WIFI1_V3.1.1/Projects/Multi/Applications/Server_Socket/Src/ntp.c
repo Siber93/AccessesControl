@@ -114,6 +114,9 @@ uint32_t parseAnswer(uint8_t* data, uint8_t datalen)
   ntps.fase = 0;
   ntps.secsSince1900 = data[ 40 ] << 24 | data[ 41 ] << 16 |
                   data[ 42 ] <<  8 | data[ 43 ];
+	
+	
+	ntps.lastNtpRequest = ntps.secsSince1900;
 
   if( ntps.secsSince1900 == 0L )
   {

@@ -73,6 +73,9 @@ void    USART_PRINT_MSG_Configuration(UART_HandleTypeDef *UART_MsgHandle, uint32
 WiFi_Status_t 	wifi_get_AP_settings(void);
 void GPIO_Config();
 void Pir_Config(void);
+void StopTimer();
+void StartTimer();
+void InitializeTimer();
 
 /* Private Declarartion ------------------------------------------------------*/
 wifi_state_t wifi_state;
@@ -114,60 +117,7 @@ GPIO_InitTypeDef GPIO_InitStruct;
 
 
 
-/*
-		START TIMER SECTION
-*/
 
-
-
-void TIM4_IRQHandler()
-{
-    HAL_TIM_IRQHandler(&s_TimerInstance);
-}
-
-
-/*
-*	Called to init timer preferences
-*/
-void InitializeTimer()
-{
-    __TIM4_CLK_ENABLE();
-    s_TimerInstance.Init.Prescaler = SystemCoreClock/10000 - 1;
-    s_TimerInstance.Init.CounterMode = TIM_COUNTERMODE_UP;
-    s_TimerInstance.Init.Period = 10000;
-    s_TimerInstance.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-    s_TimerInstance.Init.RepetitionCounter = 0;
-    HAL_TIM_Base_Init(&s_TimerInstance);
-		HAL_TIM_Base_Start_IT(&s_TimerInstance);
-		HAL_NVIC_SetPriority(TIM4_IRQn, 0, 0);
-    
-}
-
-
-
-
-/*
- * Start the timer ticking
- */
-void StartTimer()
-{	
-  HAL_NVIC_EnableIRQ(TIM4_IRQn);
-}
-
-
-/*
- * Stop the timer ticking
- */
-void StopTimer()
-{
-	HAL_NVIC_DisableIRQ(TIM4_IRQn);
-}
-
-
-
-/*
-		END TIMER SECTION
-*/
 
 
 
@@ -215,6 +165,8 @@ int main(void)
 	
 	/* Configure NTP Timer */
 	InitializeTimer();
+	/* Start NTP timer */
+	StartTimer();
 	
 	
 	/* Initialize User Button Clock */
@@ -281,8 +233,13 @@ int main(void)
   while (1)
   {
     switch (wifi_state) 
-        {
+    {
       case wifi_state_reset:
+				// Reset NTP struct
+				memset(&ntps, 0, sizeof(ntps));
+				// Save unsaved data
+				DM_Force_Save();
+				wifi_state = wifi_state_ready;
       break;
 
       case wifi_state_ready:
@@ -320,96 +277,104 @@ int main(void)
 
       case wifi_state_disconnected:
         printf("\r\n  >>[WIFI] Disconnected..\r\n");
-        wifi_state = wifi_state_idle;
+        wifi_state = wifi_state_reset;
       break;
 
-    case wifi_state_idle:
-			// Check for connection		
-      printf(".");
-      fflush(stdout);
-      HAL_Delay(500);
-      break;
-		
-		case wifi_state_connected_idle:
-			// Check NTP state machine
-      switch(ntp_state)
-			{
-				case ntp_state_reset:
-					printf("\r\n  >>[NTP] Init NTP Request");
-					//Reset Variable
-					ntps.addr = NULL;
-					ntps.server_list_index = 0;							
-					ntps.secsSince1900 = 0;
-					ntps.fase = 0;
-					ntps.retries_counter=0;
-					// Change state
-					ntp_state = ntp_state_send;					
-					break;				
-				case ntp_state_send:
-					printf("\r\n  >>[NTP] Sending NTP Request to server #%d\r\n",ntps.server_list_index);		
-					// Send the NTP request
-					ntpRequest();
-						
-					// Now wait the response
-					ntp_state = ntp_state_waiting;
-					break;
-				case ntp_state_waiting:
-					// Check if the answer has been arrived,
-					if(ntps.secsSince1900 > 0)
-					{
-						// Answer ok
-						ntp_state = ntp_state_idle;
-					}
-					else
-					{
-						// Check if the waiting time has been expired
-						if(ntps.retries_counter == NTP_SERVER_MAX_RETRIES)
+			case wifi_state_idle:
+				// Check for connection		
+				printf(".");
+				fflush(stdout);
+				HAL_Delay(500);
+				break;
+			
+			case wifi_state_connected_idle:
+				// Check NTP state machine
+				switch(ntp_state)
+				{
+					case ntp_state_reset:
+						printf("\r\n  >>[NTP] Init NTP Request");
+						//Reset Variable
+						ntps.addr = NULL;
+						ntps.server_list_index = 0;							
+						ntps.secsSince1900 = 0;
+						ntps.fase = 0;
+						ntps.retries_counter=0;
+						// Change state
+						ntp_state = ntp_state_send;					
+						break;				
+					case ntp_state_send:
+						printf("\r\n  >>[NTP] Sending NTP Request to server #%d\r\n",ntps.server_list_index);		
+						// Send the NTP request
+						ntpRequest();
+							
+						// Now wait the response
+						ntp_state = ntp_state_waiting;
+						break;
+					case ntp_state_waiting:
+						// Check if the answer has been arrived,
+						if(ntps.lastNtpRequest > 0)
 						{
-							printf("\r\n   >>No NTP Response, move forward..");
-							if(ntps.server_list_index + 1 == NTP_SERVER_NUM)
-							{
-								printf("\r\n   >>NTP Error, No other servers aviable.");
-								// Error, no one server is reachable
-								ntp_state = ntp_state_error;
-							}
-							else
-							{
-								// send the request to the next server
-								ntps.server_list_index++;
-								// Reset the ntps struct
-								ntps.secsSince1900 = 0;
-								ntps.fase = 0;
-								ntps.retries_counter=0;
-								// Back to send state
-								ntp_state = ntp_state_send;
-							}
+							// Answer ok
+							ntp_state = ntp_state_idle;
 						}
 						else
 						{
-							printf(".");
-							// Keep waiting for the response (same server)
-							ntps.retries_counter++;
-							HAL_Delay(50);
+							// Check if the waiting time has been expired
+							if(ntps.retries_counter == NTP_SERVER_MAX_RETRIES)
+							{
+								printf("\r\n   >>No NTP Response, move forward..");
+								if(ntps.server_list_index + 1 == NTP_SERVER_NUM)
+								{
+									printf("\r\n   >>NTP Error, No other servers aviable.");
+									// Error, no one server is reachable
+									ntp_state = ntp_state_error;
+								}
+								else
+								{
+									// send the request to the next server
+									ntps.server_list_index++;
+									// Reset the ntps struct
+									ntps.secsSince1900 = 0;
+									ntps.fase = 0;
+									ntps.retries_counter=0;
+									// Back to send state
+									ntp_state = ntp_state_send;
+								}
+							}
+							else
+							{
+								printf(".");
+								// Keep waiting for the response (same server)
+								ntps.retries_counter++;
+								HAL_Delay(50);
+							}
 						}
-					}
-					break;
-				case ntp_state_error:
-					StopTimer();
-					printf("\r\n  >>[NTP] NTP Error, Reseting the procedure..");
-					ntp_state = ntp_state_reset;
-					break;
-				case ntp_state_idle:					
+						break;
+					case ntp_state_error:
+						printf("\r\n  >>[NTP] NTP Error, Reseting the procedure..");
+						ntp_state = ntp_state_reset;
+						break;
+					case ntp_state_idle:	
+						// Check if it's tiem to resync ntp
+						if(ntps.secsSince1900 - ntps.lastNtpRequest > NTP_DELAY_SYNCHRO)
+						{
+							printf("\r\n  >>[NTP] NTP Synchronization invalidation");
+						}					
+						break;
+					case ntp_undefine_state:
+						break;
+				}
+				// Manage device connection only if ntp request has been sent at least 1 time
+				if(ntps.secsSince1900 > 0)
+				{
 					// Check aux devices Connection State Machine
 					DM_Kernel(&dsm_state);
-					break;
-				case ntp_undefine_state:
-					break;
-			}
-			
-			break;
-			
-    default:
-      break;
+				}
+				
+				break;
+				
+			default:
+				break;
     }    
   }
 }
@@ -770,6 +735,68 @@ WiFi_Status_t wifi_get_AP_settings(void)
   return status;
 }
 
+
+
+/*
+		START TIMER SECTION
+*/
+
+
+
+void TIM4_IRQHandler()
+{
+    HAL_TIM_IRQHandler(&s_TimerInstance);
+}
+
+
+/*
+*	Called to init timer preferences
+*/
+void InitializeTimer()
+{
+    __TIM4_CLK_ENABLE();
+    s_TimerInstance.Init.Prescaler = SystemCoreClock/10000;
+    s_TimerInstance.Init.CounterMode = TIM_COUNTERMODE_UP;
+    s_TimerInstance.Init.Period = 10000;
+    s_TimerInstance.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+    s_TimerInstance.Init.RepetitionCounter = 0;
+    HAL_TIM_Base_Init(&s_TimerInstance);
+		HAL_TIM_Base_Start_IT(&s_TimerInstance);
+		HAL_NVIC_SetPriority(TIM4_IRQn, 0, 0);   
+		 
+}
+
+
+/*
+ * Start the timer ticking
+ */
+void StartTimer()
+{	
+  HAL_NVIC_EnableIRQ(TIM4_IRQn);
+}
+
+
+/*
+ * Stop the timer ticking
+ */
+void StopTimer()
+{
+	HAL_NVIC_DisableIRQ(TIM4_IRQn);
+}
+
+
+
+/*
+		END TIMER SECTION
+*/
+
+
+
+
+
+
+
+
 /******** Wi-Fi Indication User Callback *********/
 
 void ind_wifi_socket_data_received(int8_t callback_server_id, int8_t socket_id, uint8_t * data_ptr, uint32_t message_size, uint32_t chunk_size, WiFi_Socket_t socket_type)
@@ -782,14 +809,7 @@ void ind_wifi_socket_data_received(int8_t callback_server_id, int8_t socket_id, 
 		
 		time = time -  NTP_SEVENTY_YEARS;
 		printf("\r\nNTP Data Receive: %lu \r\n",(unsigned long)time);
-		//ntp_state = ntp_state_idle;
-		// Close now the socket, just 1 answer
-		/*if(wifi_socket_client_close(ntps.server_id) == WiFi_MODULE_SUCCESS)
-		{
-			ntps.server_id = 255;
-		}*/
-		// Start the incrementer timer
-		StartTimer();
+
 		return;
 	}
 	// If not NTP check if the client is accepted

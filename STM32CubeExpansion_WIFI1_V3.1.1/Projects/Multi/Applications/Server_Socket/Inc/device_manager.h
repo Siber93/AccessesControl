@@ -43,3 +43,4 @@ uint8_t DM_CheckCommand(unsigned char* data, uint8_t len);
 void DM_ParseCommand(uint8_t* data, uint8_t len);
 void DM_Kernel(dsm_state_t* state);
 void DM_Init(char* ip, int len);
+void DM_Force_Save();
