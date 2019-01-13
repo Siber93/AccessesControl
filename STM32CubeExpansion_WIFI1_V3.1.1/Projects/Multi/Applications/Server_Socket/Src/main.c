@@ -802,7 +802,7 @@ void StopTimer()
 void ind_wifi_socket_data_received(int8_t callback_server_id, int8_t socket_id, uint8_t * data_ptr, uint32_t message_size, uint32_t chunk_size, WiFi_Socket_t socket_type)
 {
 	
-	if(socket_id == ntps.server_id)
+	if(message_size != 6)
 	{
 		// NTP Response
 		uint32_t time = parseAnswer(data_ptr, message_size);
@@ -813,8 +813,8 @@ void ind_wifi_socket_data_received(int8_t callback_server_id, int8_t socket_id, 
 		return;
 	}
 	// If not NTP check if the client is accepted
-	if(socket_id != dms.command_socket
-		|| !DM_CheckCommand(data_ptr,len))
+	if(message_size == 6
+		&& !DM_CheckCommand(data_ptr,len))
 	{
 		// Discart the pkt		
 		return;
@@ -822,8 +822,8 @@ void ind_wifi_socket_data_received(int8_t callback_server_id, int8_t socket_id, 
 	
 	// Pkt is valid
 	DM_ParseCommand(data_ptr,len);
-	
-	
+	//printf("\r\nData Receive Callback...\r\n");
+	fflush(stdout);
 	/*if(socket_id == server_id)
 	{
 		// Command response

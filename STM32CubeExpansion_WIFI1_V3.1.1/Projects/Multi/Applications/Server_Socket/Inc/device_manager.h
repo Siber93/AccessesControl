@@ -32,6 +32,7 @@ struct dm_stru
 	uint8_t   			command_socket;
 	uint32_t				discovery_tmstmp;
 	uint16_t				people;
+	uint8_t					print_flag;
 };
 
 extern struct dm_stru dms;

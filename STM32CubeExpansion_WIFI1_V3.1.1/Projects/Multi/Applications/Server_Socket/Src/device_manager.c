@@ -165,12 +165,24 @@ void DM_Kernel(dsm_state_t* dsm_st)
 			{
 				if(ntps.secsSince1900 - lastPirMooving > MAX_PIR_DELTA_TIME)
 				{
-					while(!cmd_resolver_lock);
+					while(cmd_resolver_lock);
 					// Take the lock
 					cmd_resolver_lock++;
 					dms.people = 0;
 					FM_AddValue(dms.people);
 					cmd_resolver_lock--;
+				}
+				else
+				{
+					if(dms.print_flag)
+					{
+						while(cmd_resolver_lock);
+						// Take the lock
+						cmd_resolver_lock++;
+						dms.print_flag = 0;
+						FM_AddValue(dms.people);
+						cmd_resolver_lock--;
+					}
 				}
 			}
 			
@@ -189,7 +201,7 @@ void DM_Kernel(dsm_state_t* dsm_st)
 */
 uint8_t DM_CheckCommand(uint8_t* data, uint8_t len)
 {
-	return data[0] == 0xFE && data[0] == 0xFF ? 1 : 0;
+	return (uint8_t)(data[0] == 0xFE && data[1] == 0xFF ? 1 : 0);
 }
 
 
@@ -216,7 +228,7 @@ void DM_ParseCommand(uint8_t* data, uint8_t len)
 			}
 			break;
 		case 0x02:
-			while(!cmd_resolver_lock);
+			while(cmd_resolver_lock);
 		
 			// Take the lock
 			cmd_resolver_lock++;
@@ -244,7 +256,7 @@ void DM_ParseCommand(uint8_t* data, uint8_t len)
 					break;
 			}		
 			// Print log			
-			FM_AddValue(dms.people);
+			dms.print_flag = 1;
 			// Release the lock
 			cmd_resolver_lock--;
 			break;
