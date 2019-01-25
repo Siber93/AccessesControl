@@ -27,13 +27,21 @@
 	<div id="container" style="width: 75%;"><div style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;" class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
 		<canvas id="canvas" style="display: block; width: 1013px; height: 506px;" width="1013" height="506" class="chartjs-render-monitor"></canvas>
 	</div>
-	<button id="randomizeData">Randomize Data</button>
-	<button id="addDataset">Add Dataset</button>
-	<button id="removeDataset">Remove Dataset</button>
-	<button id="addData">Add Data</button>
-	<button id="removeData">Remove Data</button>
 	<script>
-		var barChartData;
+		var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		var color = Chart.helpers.color;
+	
+		var barChartData =  {
+								labels: [],
+								datasets: [{
+									label: 'Persone nel Laboratorio',
+									backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+									borderColor: window.chartColors.red,
+									borderWidth: 1,
+									data: []
+								}]
+
+							};
 		var start = 15;
 		var end = 45;
 		var intervalNumber = 10;
@@ -58,11 +66,6 @@
 		
 		
 		window.onload = function(e){ 
-			update();			
-		}
-		
-		function update()
-		{
 			// Aggiorno start ed end
 			readTimeStamp();
 			// Eseguo la query sui file del filesystem
@@ -70,12 +73,47 @@
 			{
 				// Disegno il grafico
 				draw();
+			}			
+		}
+		
+		function update()
+		{
+			// Aggiorno start ed end
+			readTimeStamp();
+			// Eseguo la query sui file del filesystem
+			if(!query())
+			{
+				// Creare array con con tutti zeri
+				var mergedAvgFinalArray = [];
+				// Lo riempio con tutti zeri inizialmente
+				for(var k = 0; k < intervalNumber-1; k++)
+				{
+					// Creo un oggetto di default e lo aggiungo
+					var objN = {time : (start + Math.round(interval*k/2))+ "", value : 0};
+					mergedAvgFinalArray.push(objN);
+				}
+				
+				while(barChartData.labels.length > 0 
+				|| barChartData.datasets[0].data.length > 0) 
+				{
+					barChartData.labels.pop();
+					barChartData.datasets[0].data.pop();
+				}
+				
+				
+				for(var i = 0; i < mergedAvgFinalArray.length; i++)
+				{
+					barChartData.labels.push(mergedAvgFinalArray[i].time);
+					barChartData.datasets[0].data.push(mergedAvgFinalArray[i].value);
+				}
 			}
+			
+			// Aggiorno il grafico
+			window.myBar.update();
 		}
 		
 		
-		var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-		var color = Chart.helpers.color;
+		
 		
 
 		// Leggo i valori dal textinput delle date
@@ -115,6 +153,7 @@
 					var edgeUp = stringArray.length-1;
 					for (var i = 0; i < stringArray.length; i++) {
 						var val = parseInt(stringArray[i].replace(".json",""));
+						edgeDown = i;
 						if(val> start)
 						{
 							edgeDown = Math.max(i-1,0);
@@ -122,14 +161,31 @@
 						}
 					}
 					
-					for (var i = edgeDown; i < stringArray.length; i++) {
-						var val = parseInt(stringArray[i].replace(".json",""));
-						if(val> end)
-						{
+					if(edgeDown == stringArray.length-1 || stringArray.length == 1)
+					{
+						// Nessun file con time > start trovato, 1 solo file da analizzare ovvero l'ultimo
+						edgeUp = edgeDown;
+					}
+					else
+					{
+						// Trovato almeno un file sopra all'estremo inferiore del range
+						for (var i = edgeDown; i < stringArray.length; i++) {
+							var val = parseInt(stringArray[i].replace(".json",""));
 							edgeUp = i;
-							break;						
+							if(val> end)
+							{
+								// Controllo se il primo file è già sopra all'estremo superiore, questo significa che non vi sono file all'interno del range selezionato da analizzare
+								if(i == 0)
+								{
+									// Nessun file da analizzare
+									return false;
+								}								
+								break;						
+							}
 						}
-					}	
+					}
+					
+						
 					var addHead = false;
 					var addQueue = false;
 					
@@ -176,6 +232,7 @@
 					// Ricalcolare edgeUp and edgeDown su nuovo array completo
 					for (var i = 0; i < mergedArray.length; i++) {
 						var val = parseInt(mergedArray[i].time);
+						edgeDown = i;
 						if(val> start)
 						{
 							edgeDown = Math.max(i-1,0);
@@ -183,20 +240,49 @@
 						}
 					}
 					
-					for (var i = edgeDown; i < mergedArray.length; i++) {
-						var val = parseInt(mergedArray[i].time);
-						if(val> end)
-						{
-							edgeUp = i;
-							break;						
+					if(edgeDown == mergedArray.length-1)
+					{
+						// Nessun file con time > start trovato, ovvero nessun dato nell'intervallo
+						return false;
+					}
+					else
+					{
+					
+						for (var i = edgeDown; i < mergedArray.length; i++) {
+							var val = parseInt(mergedArray[i].time);
+							edgeUp =i;
+							if(val> end)
+							{
+								edgeUp = Math.max(edgeDown,i-1);
+								break;						
+							}
 						}
+					}
+					
+					
+					if(edgeUp == edgeDown)
+					{
+						// Nessun dato disponibile
+						return false;
 					}
 					
 					// Creare un nuovo array con in posizione 0 il valore di edgeDown ed in posizione N il valore di edgeUp
 					
 					var mergedFinalArray = mergedArray.slice(edgeDown,edgeUp);
+					if(mergedFinalArray[0]<=start)
+					{
+						// 1° valore di tempo inferiore allo start
+						mergedFinalArray[0].time = start;
+					}
+					else
+					{
+						// 1° valore di tempo superiore allo start
+						var obj_first = {time : start+ "", value : 0};
+						mergedFinalArray.unshift(obj_first);
+					}
 					mergedFinalArray[0].time = start;
-					mergedFinalArray[mergedFinalArray.length-1].time = end;
+					var obj_last = {time : end, value : mergedFinalArray[mergedFinalArray.length-1].time};
+					mergedFinalArray.push(obj_last);
 					
 					if(mergedFinalArray.length == 0)
 					{
@@ -212,13 +298,16 @@
 					for (var j = 0; j < mergedFinalArray.length-1; j++) {
 						var val = parseInt(mergedFinalArray[j].time);
 						var valNext = parseInt(mergedFinalArray[j+1].time);
+						// Salto gli intervalli vuoti
 						while(val >= start + interval*index)
 						{
 							index++;
 						}
+						// Calcolo differenza tra il l'inizio dell'intervallo successivo ed il valore di tempo del record attuale
 						var deltaI = ((start + interval*index))-val;
+						// Calcolo differenza tra il valore di tempo del record successivo e quello attuale
 						var deltaN = valNext - val;
-						
+						// Aggiungo all'array dei pesi il rapporto tra la minore delle due differenze sopra calcolate e la distanza dal prossimo intervallo
 						weights.push(Math.min(deltaI,deltaN)/interval);
 					}
 					
@@ -226,24 +315,39 @@
 					
 					// Creare array con medie pesate
 					var mergedAvgFinalArray = [];
+					// Lo riempio con tutti zeri inizialmente
+					for(var k = 0; k < intervalNumber-1; k++)
+					{
+						// Creo un oggetto di default e lo aggiungo
+						var objN = {time : (start + Math.round(interval*k/2)), value : 0};
+						mergedAvgFinalArray.push(objN);
+					}
+					
+					// Parto a confrontare con l'inizio del secondo intervallo
 					index = 1;
-					var obj1 = {time : (start + Math.round(interval/2))+ "", value : 0};
-					mergedAvgFinalArray.push(obj1);
+					// Creo 1 pt per ogni intervallo esattamente a meta tra un estremo e l'altro
 					for (var j = 0; j < mergedFinalArray.length-1; j++) {
 						var val = parseInt(mergedFinalArray[j].time);
+						// Salto gli intervalli vuoti
 						while(val >= start + interval*index)
 						{
+							// Incremento l'indice dell'intervallo
 							index++;
-							var prevEdge = start + interval*(index-1)
-							var objN = {time : (prevEdge + Math.round(interval/2))+ "", value : 0};
-							mergedAvgFinalArray.push(objN);
+							// Calcolo l'estremo superiore dell'intervallo precedente
+							var prevEdge = start + interval*(index-1)							
+							// Verifico di non stare analizzando il primo record
 							if(j > 0)
-							{
-								// Caso in cui il dato non parte esattamente dall'inizio dell'intervallo
-								var valPrev = parseInt(mergedFinalArray[j-1].time);							
+							{								
+								// Calcolo valore di tempo del record precedente
+								var valPrev = parseInt(mergedFinalArray[j-1].time);
+								// Controllo che il valore di tempo attuale non combaci esattamente con l'estremo inferiore dll'intervallo corrente.
+								// Nel caso questo sia vero devo considerare il valore del record precedente anche per l'intervallo corrente (e non solo quello preccedente).
 								if(val>prevEdge)
 								{
-									mergedAvgFinalArray[index-1].value += mergedFinalArray[j-1].value*(val-prevEdge)/interval;
+									// Calcolo il peso da dare al conto successivo
+									var w = Math.min((val-prevEdge)/interval,1);
+									// Aggiungo al valore del dato relativo all'intervallo corrente una percentuale pesata del dato del record precedente 
+									mergedAvgFinalArray[index-1].value += mergedFinalArray[j-1].value * w;
 								}			
 							}					
 							
@@ -251,25 +355,20 @@
 						mergedAvgFinalArray[index-1].value += mergedFinalArray[j].value*weights[j];
 					}
 					
-					var labels = [];
-					var data = [];
-					for(var i = 0; i < mergedAvgFinalArray.length; i++)
+					
+					while(barChartData.labels.length > 0 
+					|| barChartData.datasets[0].data.length > 0) 
 					{
-						labels.push(mergedAvgFinalArray[i].time);
-						data.push(mergedAvgFinalArray[i].value);
+						barChartData.labels.pop();
+						barChartData.datasets[0].data.pop();
 					}
 					
-					barChartData = {
-						labels: labels,
-						datasets: [{
-							label: 'Persone nel Laboratorio',
-							backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-							borderColor: window.chartColors.red,
-							borderWidth: 1,
-							data: data
-						}]
-
-					};
+					
+					for(var i = 0; i < mergedAvgFinalArray.length; i++)
+					{
+						barChartData.labels.push(new Date(mergedAvgFinalArray[i].time*1000).toLocaleTimeString()+"\r\n"+new Date(mergedAvgFinalArray[i].time*1000).toLocaleDateString());
+						barChartData.datasets[0].data.push(mergedAvgFinalArray[i].value);
+					}
 				}
 			});
 			
@@ -292,7 +391,14 @@
 					},
 					title: {
 						display: true,
-						text: 'Chart.js Bar Chart'
+						text: 'Access Control Data'
+					},
+					scales: {
+						xAxes: [{
+							ticks: {
+								display: false //this will remove only the label
+							}
+						}]
 					}
 				}
 			});
