@@ -19,7 +19,7 @@
 #define NTP_LOCAL_DIFFERERENCE          - 60 * ( 4 * 60 + 30 )
 
 // Delay between two synchronization
-#define NTP_DELAY_SYNCHRO               83 // Time at witch I lost 1 sec
+#define NTP_DELAY_SYNCHRO               83*60 // Time at witch I lost 1 minutes
 
 // Delay in minutes between retries when failure
 #define NTP_DELAY_FAILURE               3

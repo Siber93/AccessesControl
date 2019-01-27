@@ -535,33 +535,8 @@
         </Book>
         <Book>
           <Number>6</Number>
-          <Title>User Manual (NUCLEO-F401RE)</Title>
-          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32NUCLEO_BSP\1.6.0\Documents\DM00105823.pdf</Path>
-        </Book>
-        <Book>
-          <Number>7</Number>
-          <Title>Overview (NUCLEO-F401RE)</Title>
-          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32NUCLEO_BSP\1.6.0\Documents\DM00105918.pdf</Path>
-        </Book>
-        <Book>
-          <Number>8</Number>
-          <Title>Getting started (NUCLEO-F401RE)</Title>
-          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32NUCLEO_BSP\1.6.0\Documents\DM00105928.pdf</Path>
-        </Book>
-        <Book>
-          <Number>9</Number>
-          <Title>Schematics (NUCLEO-F401RE)</Title>
-          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32NUCLEO_BSP\1.6.0\Documents\MB1136.pdf</Path>
-        </Book>
-        <Book>
-          <Number>10</Number>
           <Title>STM32F401C-Discovery Web Page (STM32F401C-Discovery)</Title>
           <Path>http://www.st.com/web/catalog/tools/FM116/SC959/SS1532/LN1199/PF259098</Path>
-        </Book>
-        <Book>
-          <Number>11</Number>
-          <Title>STM32 Nucleo board (NUCLEO-F401RE)</Title>
-          <Path>http://www.st.com/web/catalog/tools/FM116/SC959/SS1532/LN1847/PF260000</Path>
         </Book>
       </Books>
       <DebugOpt>
