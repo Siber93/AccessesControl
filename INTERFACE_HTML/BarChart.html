@@ -59,37 +59,37 @@
 			},			
 			maxDate: moment().format('YYYY-MM-DDTHH:mm:ss')
 		  }, 
-		  function(start, end, label) {				// Quando cambia il valore nell'inputtext vado a rileggere start e end, successivamente riplotto tutto il grafico
+		  function(s, e, label) {				// Quando cambia il valore nell'inputtext vado a rileggere start e end, successivamente riplotto tutto il grafico
+			// Aggiorno start ed end
+			readTimeStamp(s, e);
 			update();
 		  });
 		});
 		
 		
 		window.onload = function(e){ 
+			var dates = $('input[name="datetimes"]')[0].value.split(" - ");
 			// Aggiorno start ed end
-			readTimeStamp();
+			readTimeStamp(dates[0], dates[1]);
 			// Eseguo la query sui file del filesystem
-			if(query())
-			{
-				// Disegno il grafico
-				draw();
-			}			
+			query()
+			// Disegno il grafico
+			draw();
 		}
 		
 		function update()
 		{
-			// Aggiorno start ed end
-			readTimeStamp();
 			// Eseguo la query sui file del filesystem
 			if(!query())
 			{
 				// Creare array con con tutti zeri
 				var mergedAvgFinalArray = [];
+				var interval = (end-start) /intervalNumber;
 				// Lo riempio con tutti zeri inizialmente
-				for(var k = 0; k < intervalNumber-1; k++)
+				for(var k = 0; k < intervalNumber; k++)
 				{
 					// Creo un oggetto di default e lo aggiungo
-					var objN = {time : (start + Math.round(interval*k/2))+ "", value : 0};
+					var objN = {time : (start + Math.round(interval/2 + k * interval))+ "", value : 0};
 					mergedAvgFinalArray.push(objN);
 				}
 				
@@ -117,18 +117,21 @@
 		
 
 		// Leggo i valori dal textinput delle date
-		function readTimeStamp()
+		function readTimeStamp(s, e)
 		{
-			var dates = $('input[name="datetimes"]')[0].value.split(" - ");
-			start = (new Date(dates[0]).getTime()/1000);
-			end = (new Date(dates[1]).getTime()/1000);
+			// 3600 sono i secondi da aggiungere per arrivare al nostro fuso
+			start = (new Date(s).getTime()/1000) ;
+			end = (new Date(e).getTime()/1000) ; 
 			//alert(start + "\r\n"+ end);
 		}
 		
 		
+		var query_res = false;
+		
 		// Carica i file json
 		function query()
 		{
+			query_res = true;
 			$.ajax({
 				url : "db_index.txt",
 				async: false,
@@ -138,7 +141,8 @@
 					if(stringArray.length == 0)
 					{
 						// Nessu file sul quale eseguire la query
-						return false;
+						query_res = false;
+						return;
 					}
 					
 					if(stringArray[0] == "")
@@ -178,7 +182,8 @@
 								if(i == 0)
 								{
 									// Nessun file da analizzare
-									return false;
+									query_res = false;
+									return;
 								}								
 								break;						
 							}
@@ -222,7 +227,8 @@
 					if(mergedArray.length == 0)
 					{
 						// Nessun dato sul quale eseguire la query
-						return false;
+						query_res = false;
+						return;
 					}
 					
 					
@@ -243,7 +249,8 @@
 					if(edgeDown == mergedArray.length-1)
 					{
 						// Nessun file con time > start trovato, ovvero nessun dato nell'intervallo
-						return false;
+						query_res = false;
+						return;
 					}
 					else
 					{
@@ -263,7 +270,8 @@
 					if(edgeUp == edgeDown)
 					{
 						// Nessun dato disponibile
-						return false;
+						query_res = false;
+						return;
 					}
 					
 					// Creare un nuovo array con in posizione 0 il valore di edgeDown ed in posizione N il valore di edgeUp
@@ -281,13 +289,14 @@
 						mergedFinalArray.unshift(obj_first);
 					}
 					mergedFinalArray[0].time = start;
-					var obj_last = {time : end, value : mergedFinalArray[mergedFinalArray.length-1].time};
+					var obj_last = {time : end, value : mergedFinalArray[mergedFinalArray.length-1].value};
 					mergedFinalArray.push(obj_last);
 					
 					if(mergedFinalArray.length == 0)
 					{
 						// Nessun dato sul quale eseguire la query
-						return false;
+						query_res = false;
+						return;
 					}
 					
 					
@@ -316,10 +325,10 @@
 					// Creare array con medie pesate
 					var mergedAvgFinalArray = [];
 					// Lo riempio con tutti zeri inizialmente
-					for(var k = 0; k < intervalNumber-1; k++)
+					for(var k = 0; k < intervalNumber; k++)
 					{
 						// Creo un oggetto di default e lo aggiungo
-						var objN = {time : (start + Math.round(interval*k/2)), value : 0};
+						var objN = {time : (start + Math.round(interval/2 + k * interval)), value : 0};
 						mergedAvgFinalArray.push(objN);
 					}
 					
@@ -355,6 +364,11 @@
 						mergedAvgFinalArray[index-1].value += mergedFinalArray[j].value*weights[j];
 					}
 					
+					// Per ogni intervallo non considerato fino ad ora prendo l'ultimo valore registrato e lo copio su tutti
+					for(var k = index; k < intervalNumber; k++)
+					{
+						mergedAvgFinalArray[k].value = mergedFinalArray[mergedFinalArray.length-1].value;
+					}
 					
 					while(barChartData.labels.length > 0 
 					|| barChartData.datasets[0].data.length > 0) 
@@ -372,7 +386,7 @@
 				}
 			});
 			
-			return true;
+			return query_res;
 		}
 		
 		
