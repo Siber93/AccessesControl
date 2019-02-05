@@ -59,7 +59,7 @@ int getDistance(int tPin, int ePin){
 int SendData(int a){     
         Serial.println("sending data to server");
         //viene controllato se il dispositivo master è ancora raggiungibile tramite ping e se la connessione e ancora attiva
-        if (client.connected() && Ping.ping(ip)){
+        if (client.connected() && Ping.ping(ip,2)){
               //in base al valore di a si modificano i valori del pacchetto da inviare
               if (a == 1) {
                   outPacket[4] = 0x01;
@@ -82,9 +82,9 @@ int SendData(int a){
 int ConnForStream(){
     int cc = 0;     //contatore che indica il numero di prove eseguite
     //si prova ad aprire la connessione masssimo 3 volte
-    while (!client.connect(ip, tcpPort) && cc <3) {
+    while (!client.connect(ip, tcpPort) && cc <2) {
         Serial.println("connection failed");
-        delay(5000);
+        delay(1000);
         cc ++;
       }
     if (cc < 3) return 1;
@@ -94,7 +94,7 @@ int ConnForStream(){
 int FindStation(){
   int cnt = 0;      //contatore che indica il numero di prove effettuate;
   boolean cr = false;   //variabile che indica l'effettivo ritrovamento del segnale giusto
-  while (cr == false && cnt<3){
+  while (cr == false && cnt<2){
       Serial.println("Sending mDNS query");
       int n = MDNS.queryService("custom", "tcp"); // Send out query for mdns tcp services
       Serial.println("mDNS query done");
@@ -124,7 +124,7 @@ int FindStation(){
           }else if(i == n) cnt++;   //quessto serve nel caso ci siano altri segnali mdns ma di host che non sono quelli che si cercavano
         }
       }
-  delay(5000);
+  delay(1000);
   }
   if (cr == true) return 1;
   else return 0;
@@ -191,6 +191,8 @@ void loop() {
   int z = 0;
   //variabile contenente la distanza in cm
   int distance;
+  boolean nv = true;
+  boolean nv2 = true;
   //switch contenente gli stati del programma
   switch(stato){
     //stato 0 è lo stato iniziale in cui la porta è chiusa e in cui si rimane finchè non viene aperta
@@ -207,7 +209,13 @@ void loop() {
           tcpConn = false;
           if  (WiFi.status() == WL_CONNECTED){
               stF = FindStation();
-              tcpConn = ConnForStream();
+              if (stF) tcpConn = ConnForStream();
+              else tcpConn = false;
+              if (tcpConn){
+                if (globalE>0) nv = SendData(1);
+                if (globalU>0) nv2 = SendData(2);
+              }
+              if (nv == false || nv2 == false) tcpConn = false;
           }
       }
       break;
