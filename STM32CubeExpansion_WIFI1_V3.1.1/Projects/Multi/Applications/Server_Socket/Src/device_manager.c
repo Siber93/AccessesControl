@@ -165,12 +165,17 @@ void DM_Kernel(dsm_state_t* dsm_st)
 			{
 				if(ntps.secsSince1900 - lastPirMooving > MAX_PIR_DELTA_TIME)
 				{
+					printf("\r\n >>PIR Reset\r\n");
 					while(cmd_resolver_lock);
 					// Take the lock
 					cmd_resolver_lock++;
-					dms.people = 0;
-					FM_AddValue(dms.people);
+					if(dms.people != 0)
+					{
+						dms.people = 0;
+						FM_AddValue(dms.people);
+					}
 					cmd_resolver_lock--;
+					lastPirMooving = ntps.secsSince1900;
 				}
 				else
 				{

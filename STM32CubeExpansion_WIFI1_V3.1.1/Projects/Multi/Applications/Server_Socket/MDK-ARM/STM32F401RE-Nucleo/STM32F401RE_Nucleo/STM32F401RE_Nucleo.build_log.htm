@@ -27,16 +27,6 @@ Project File Date:  01/04/2019
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 3 (build 300)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'STM32F401RE_Nucleo_SPWF04_UART'
-compiling device_manager.c...
-..\..\Inc\device_manager.h(47): warning:  #1295-D: Deprecated declaration DM_Force_Save - give arg types
-  void DM_Force_Save();
-..\..\Inc\file_manager.h(9): warning:  #1295-D: Deprecated declaration FM_Check_WTimeout - give arg types
-  void FM_Check_WTimeout();
-..\..\Inc\file_manager.h(10): warning:  #1295-D: Deprecated declaration FM_Force_Save - give arg types
-  void FM_Force_Save();
-..\..\Src\device_manager.c(45): warning:  #186-D: pointless comparison of unsigned integer with zero
-  	for(i = dms.addr_len-1; i >= 0; i--)
-..\..\Src\device_manager.c: 4 warnings, 0 errors
 compiling main.c...
 ..\..\Inc\device_manager.h(47): warning:  #1295-D: Deprecated declaration DM_Force_Save - give arg types
   void DM_Force_Save();
@@ -52,16 +42,16 @@ compiling main.c...
           WiFi_Status_t status;
 ..\..\Src\main.c: 6 warnings, 0 errors
 linking...
-Program Size: Code=32500 RO-data=864 RW-data=252 ZI-data=12316  
+Program Size: Code=32652 RO-data=864 RW-data=252 ZI-data=12316  
 After Build - User command #1: fromelf --bin -o STM32F401RE_Nucleo\STM32F401RE_Nucleo.bin STM32F401RE_Nucleo\STM32F401RE_Nucleo.axf
-".\STM32F401RE_Nucleo\STM32F401RE_Nucleo.axf" - 0 Error(s), 10 Warning(s).
+".\STM32F401RE_Nucleo\STM32F401RE_Nucleo.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   C:\Users\Simone\Documents\GitHub\AccessesControl\STM32CubeExpansion_WIFI1_V3.1.1\Projects\Multi\Applications\Server_Socket\MDK-ARM\STM32F401RE-Nucleo\RTE
   C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:14
 </pre>
 </body>
 </html>

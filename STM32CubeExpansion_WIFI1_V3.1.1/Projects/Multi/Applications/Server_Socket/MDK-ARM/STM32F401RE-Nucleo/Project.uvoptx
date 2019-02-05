@@ -535,8 +535,33 @@
         </Book>
         <Book>
           <Number>6</Number>
+          <Title>User Manual (NUCLEO-F401RE)</Title>
+          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32NUCLEO_BSP\1.6.0\Documents\DM00105823.pdf</Path>
+        </Book>
+        <Book>
+          <Number>7</Number>
+          <Title>Overview (NUCLEO-F401RE)</Title>
+          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32NUCLEO_BSP\1.6.0\Documents\DM00105918.pdf</Path>
+        </Book>
+        <Book>
+          <Number>8</Number>
+          <Title>Getting started (NUCLEO-F401RE)</Title>
+          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32NUCLEO_BSP\1.6.0\Documents\DM00105928.pdf</Path>
+        </Book>
+        <Book>
+          <Number>9</Number>
+          <Title>Schematics (NUCLEO-F401RE)</Title>
+          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32NUCLEO_BSP\1.6.0\Documents\MB1136.pdf</Path>
+        </Book>
+        <Book>
+          <Number>10</Number>
           <Title>STM32F401C-Discovery Web Page (STM32F401C-Discovery)</Title>
           <Path>http://www.st.com/web/catalog/tools/FM116/SC959/SS1532/LN1199/PF259098</Path>
+        </Book>
+        <Book>
+          <Number>11</Number>
+          <Title>STM32 Nucleo board (NUCLEO-F401RE)</Title>
+          <Path>http://www.st.com/web/catalog/tools/FM116/SC959/SS1532/LN1847/PF260000</Path>
         </Book>
       </Books>
       <DebugOpt>
@@ -612,7 +637,7 @@
           <Type>0</Type>
           <LineNumber>3281</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134240252</Address>
+          <Address>134240424</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -622,22 +647,6 @@
           <Filename>..\..\..\..\..\..\Middlewares\ST\STM32_SPWF0xSy\wifi_module.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression>\\STM32F401RE_Nucleo\../../../../../../Middlewares/ST/STM32_SPWF0xSy/wifi_module.c\3281</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>235</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134245806</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\..\Src\main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\\../../Src/main.c\235</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -735,6 +744,11 @@
           <count>18</count>
           <WinNumber>1</WinNumber>
           <ItemText>dms.command_socket</ItemText>
+        </Ww>
+        <Ww>
+          <count>19</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>write_counter + WRITE_TIMEOUT</ItemText>
         </Ww>
       </WatchWindow1>
       <MemoryWindow1>

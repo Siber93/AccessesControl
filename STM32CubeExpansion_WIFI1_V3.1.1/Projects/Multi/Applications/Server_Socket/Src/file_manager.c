@@ -128,12 +128,14 @@ void FM_Check_WTimeout()
 		&& (write_counter + WRITE_TIMEOUT < ntps.secsSince1900 
 				|| dirty))
 	{
+		printf("\r\n >> [FM] Data Saving...");
 		// Refresh timer
 		write_counter = ntps.secsSince1900;
 		// Delete the file
 		wifi_file_delete((char*)file_name);
 		// Create it again
 		wifi_file_create((char*)file_name,page_index,(char*)page);
+		printf("DONE");
 	}
 }
 
@@ -144,12 +146,15 @@ void FM_Force_Save()
 	// Check if there's something to write
 	if(page_index > 0)
 	{
+		printf("\r\n >> [FM] Forcing data saving...");
 		// Refresh timer
 		write_counter = ntps.secsSince1900;
 		// Delete the file
 		wifi_file_delete((char*)file_name);
 		// Create it again
 		wifi_file_create((char*)file_name,page_index,(char*)page);
+		printf("DONE");
+		
 	}
 }
 

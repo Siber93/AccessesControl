@@ -355,10 +355,12 @@ int main(void)
 						ntp_state = ntp_state_reset;
 						break;
 					case ntp_state_idle:	
-						// Check if it's tiem to resync ntp
-						if(ntps.secsSince1900 - ntps.lastNtpRequest > NTP_DELAY_SYNCHRO)
+						// Check if it's time to resync ntp
+						if(ntps.secsSince1900 != 0 
+							&& ntps.secsSince1900 - ntps.lastNtpRequest > NTP_DELAY_SYNCHRO)
 						{
 							printf("\r\n  >>[NTP] NTP Synchronization invalidation");
+							ntp_state = ntp_state_reset;
 						}					
 						break;
 					case ntp_undefine_state:
