@@ -3,13 +3,15 @@
 #include <WiFiUdp.h>
 #include <ESP8266mDNS.h>
 //Programma che si occupa della gestione dei sensori a ultrasuoni per controllare l'attraversamento di una persona.
-//variabili che definiscono i pin dei sensori per la lettura e scrittura 
+//variabili che definiscono i pin dei sensori per la lettura e scrittura
+//pin relativi al primo sensore a ultrasuoni 
 const int trigPin1 = 12;
 const int echoPin1 = 5;
+//pin relativi al secondo sensore a ultrasuoni
 const int trigPin2 = 4;
 const int echoPin2 = 14;
-const int Pin = 13;
-const int sPin = 10;
+const int Pin = 13;       //pin del reed switch
+const int sPin = 10;      //pin usato per la numerazione degli slave
 const int niter = 5;      //numero di volte che viene effettuata la lettura dai sensori
 const int maxit = 20;     //numero massimo di iterazioni prima di resettare i valori dei sensori
 //variabili che indicano se il sensore 1 o il sensore 2 hanno avuto un riscontro positivo
@@ -21,8 +23,8 @@ boolean flag2;
 int counter;              //contatore di ciclo
 int stato;                //stato in cui si trova il programma
 //variabili che indicano i valori base dei sensori
-int baseD1 = 80; //110
-int baseD2 = 80; //110
+int baseD1 = 114;
+int baseD2 = 114;
 #define tm 15000          //timeout per l'emissione del pulsein()
 #define deltaLow 20          //valore che indica l'errore relativo massimo accettato rispetto al valore base
 #define deltaHigh 200     //.....
@@ -39,7 +41,6 @@ int globalE = 0;
 int globalU = 0;
 boolean stF = false;              //valore che indica se il multicast DNS ha avuto riscontro positivo
 boolean tcpConn = false;          //valore che indica se la connessione tcp ha avuto successo
-boolean retry = false;    //valore che indica la presenza di errori nella connessione, usata per la riconfigurazione
 
 //Funzione utilizzata per trovare la distanza a cui si trova un ostacolo, tPin e ePin indicano i due pin del sensori a ultrasuoni da usare. Restituisce la distanza in cm. 
 int getDistance(int tPin, int ePin){
